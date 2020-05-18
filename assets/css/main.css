@@ -2948,9 +2948,6 @@ ul.nostyle > li {
   #coupon img {
     max-width: inherit;
   }
-  #share {
-    padding: 2em;
-  }
   #share .Social-logo li {
     padding-left: 2.5em;
   }
@@ -3132,9 +3129,6 @@ ul.nostyle > li {
   }
   #coupon img {
     max-width: 236px;
-  }
-  #share {
-    padding: 2em;
   }
   #share .Social-logo li {
     padding-left: 1.5em;
