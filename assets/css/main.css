@@ -15,7 +15,6 @@ section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -86,7 +85,6 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 body, input, select, textarea {
   color: #666;
   font-family: "Noto Sans TC", Helvetica, sans-serif;
-  font-size: 16pt;
   font-weight: 300;
   line-height: 1.65em;
 }
@@ -113,55 +111,12 @@ em, i {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1em;
   margin: 0 0 1em 0;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: inherit;
   text-decoration: none;
-}
-
-h1 {
-  font-size: 2.25em;
-  line-height: 1.35em;
-}
-
-h2 {
-  font-size: 2em;
-  line-height: 1.35em;
-}
-
-h3 {
-  font-size: 1.35em;
-  line-height: 1.5em;
-}
-
-h4 {
-  font-size: 1.25em;
-  line-height: 1.5em;
-}
-
-h5 {
-  font-size: 0.9em;
-  line-height: 1.5em;
-}
-
-h6 {
-  font-size: 0.7em;
-  line-height: 1.5em;
-}
-
-sub {
-  font-size: 0.8em;
-  position: relative;
-  top: 0.5em;
-}
-
-sup {
-  font-size: 0.8em;
-  position: relative;
-  top: -0.5em;
 }
 
 hr {
@@ -228,7 +183,7 @@ pre code {
   height: 3px;
   margin: 0 auto;
   margin-top: 0.5em;
-  width: 5em;
+  width: 7em;
   border-radius: 15%;
   top: -1em;
 }
@@ -519,7 +474,7 @@ pre code {
   padding-top: 4em;
 }
 
-@media screen and (max-width: 1680px) {
+@media screen {
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -1647,22 +1602,16 @@ header p {
 }
 
 header h2 + p {
-  font-size: 1.25em;
-  line-height: 1.5em;
   margin-top: -1em;
 }
 
 header h3 + p {
-  font-size: 1.1em;
-  line-height: 1.5em;
   margin-top: -0.8em;
 }
 
 header h4 + p,
 header h5 + p,
 header h6 + p {
-  font-size: 0.9em;
-  line-height: 1.5em;
   margin-top: -0.6em;
 }
 
@@ -2160,7 +2109,6 @@ table td {
 
 table th {
   color: #555;
-  font-size: 1.1em;
   font-weight: 700;
   padding: 0.75em 0.75em 0 0.75em;
   text-align: center;
@@ -2215,7 +2163,6 @@ button,
   color: #555 !important;
   cursor: pointer;
   display: inline-block;
-  font-size: 0.9em;
   font-weight: 400;
   height: 2.75em;
   letter-spacing: 0.125em;
@@ -2644,11 +2591,6 @@ button:disabled,
   margin: 0;
 }
 
-#header p {
-  font-size: medium;
-  line-height: initial;
-}
-
 #header .actions {
   -moz-justify-content: center;
   -ms-justify-content: center;
@@ -2935,10 +2877,25 @@ ul.nostyle > li {
 }
 
 /* XLarge */
-@media screen and (max-width: 1680px) {
+@media screen {
   /* Basic */
-  body, input, select, textarea {
-    font-size: 14pt;
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: initial;
+  }
+  h2 p {
+    font-size: medium;
+  }
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: initial;
+  }
+  table {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: initial;
   }
   /* Header */
   #header {
@@ -2986,10 +2943,10 @@ ul.nostyle > li {
     max-width: calc(150px * 1.5);
   }
   #beforehand .bIcon img {
-    max-width: calc(100px * 1.5);
+    max-width: calc(100px * 2);
   }
   #coupon img {
-    max-width: calc(236px * 1.5);
+    max-width: inherit;
   }
   #share {
     padding: 2em;
@@ -3005,14 +2962,17 @@ ul.nostyle > li {
   }
 }
 
-/* Large */
+/* Large 1140 */
 @media screen and (max-width: 1140px) {
   /* Basic */
-  body, input, select, textarea {
-    font-size: 13pt;
+  h2 {
+    font-size: 3rem;
   }
-  h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
-    display: none;
+  h3 {
+    font-size: 2rem;
+  }
+  table {
+    font-size: 1.3rem;
   }
   /* List */
   ul.major-icons li {
@@ -3040,8 +3000,18 @@ ul.nostyle > li {
   }
 }
 
-/* Medium */
+/* Medium 980 */
 @media screen and (max-width: 980px) {
+  /* Basic */
+  h2 {
+    font-size: 2.3rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  table {
+    font-size: 1.2rem;
+  }
   /* List */
   ul.major-icons li {
     padding: 2em;
@@ -3088,6 +3058,16 @@ ul.nostyle > li {
 
 /* Small 736 */
 @media screen and (max-width: 736px) {
+  /* Basic */
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  table {
+    font-size: 1.1rem;
+  }
   /* Header */
   #header {
     padding: 8em 0 8em 0 ;
@@ -3102,22 +3082,6 @@ ul.nostyle > li {
   }
   .inner {
     top: 50%;
-  }
-  /* Basic */
-  body, input, select, textarea {
-    font-size: 14pt;
-  }
-  h1 {
-    font-size: 1.75em;
-  }
-  h2 {
-    font-size: 1.5em;
-  }
-  h3 {
-    font-size: 1.1em;
-  }
-  h4 {
-    font-size: 1em;
   }
   /* List */
   ul.major-icons li {
@@ -3186,21 +3150,6 @@ ul.nostyle > li {
 /* XSmall 480 */
 @media screen and (max-width: 480px) {
   /* Basic */
-  body, input, select, textarea {
-    font-size: 12pt;
-  }
-  h1 {
-    font-size: 1.75em;
-  }
-  h2 {
-    font-size: 1.5em;
-  }
-  h3 {
-    font-size: 1.1em;
-  }
-  h4 {
-    font-size: 1em;
-  }
   .container {
     padding-left: 0;
     padding-right: 0;

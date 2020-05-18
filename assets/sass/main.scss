@@ -12,7 +12,7 @@
 // Breakpoints.
 
 	@include breakpoints((
-		xlarge:   ( 1141px,  1680px ),
+		xlarge:   ( 1141px,  null ),
 		large:    ( 981px,   1140px ),
 		medium:   ( 737px,   980px  ),
 		small:    ( 481px,   736px  ),
@@ -36,7 +36,6 @@
 		margin: 0;
 		padding: 0;
 		border: 0;
-		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
 	}
@@ -116,7 +115,6 @@
 	body, input, select, textarea {
 		color: _palette(fg);
 		font-family: _font(family);
-		font-size: 16pt;
 		font-weight: _font(weight);
 		line-height: 1.65em;
 	}
@@ -144,55 +142,12 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		line-height: 1em;
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
 
 		a {
 			color: inherit;
 			text-decoration: none;
 		}
-	}
-
-	h1 {
-		font-size: 2.25em;
-		line-height: 1.35em;
-	}
-
-	h2 {
-		font-size: 2em;
-		line-height: 1.35em;
-	}
-
-	h3 {
-		font-size: 1.35em;
-		line-height: 1.5em;
-	}
-
-	h4 {
-		font-size: 1.25em;
-		line-height: 1.5em;
-	}
-
-	h5 {
-		font-size: 0.9em;
-		line-height: 1.5em;
-	}
-
-	h6 {
-		font-size: 0.7em;
-		line-height: 1.5em;
-	}
-
-	sub {
-		font-size: 0.8em;
-		position: relative;
-		top: 0.5em;
-	}
-
-	sup {
-		font-size: 0.8em;
-		position: relative;
-		top: -0.5em;
 	}
 
 	hr {
@@ -260,7 +215,7 @@
 			height: 3px;
 			margin: 0 auto;
 			margin-top: 0.5em;
-			width: 5em;
+			width: 7em;
 			border-radius: 15%;
 			top: -1em;
 		}
@@ -352,22 +307,16 @@
 		}
 
 		h2 + p {
-			font-size: 1.25em;
-			line-height: 1.5em;
 			margin-top: (_size(element-margin) * -0.5);
 		}
 
 		h3 + p {
-			font-size: 1.1em;
-			line-height: 1.5em;
 			margin-top: (_size(element-margin) * -0.4);
 		}
 
 		h4 + p,
 		h5 + p,
 		h6 + p {
-			font-size: 0.9em;
-			line-height: 1.5em;
 			margin-top: (_size(element-margin) * -0.3);
 		}
 
@@ -858,7 +807,6 @@
 
 		th {
 			color: _palette(fg-bold);
-			font-size: 1.1em;
 			font-weight: 700;
 			padding: 0.75em 0.75em 0 0.75em;
 			text-align: center;
@@ -921,7 +869,6 @@
 		color: _palette(fg-bold) !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.9em;
 		font-weight: _font(weight-bold);
 		height: 2.75em;
 		letter-spacing: 0.125em;
@@ -1139,11 +1086,6 @@
 			margin: 0;
 		}
 
-		p {
-			font-size: medium;
-			line-height: initial;
-		}
-
 		.actions {
 			@include vendor('justify-content', 'center');
 			margin-top: 1em;
@@ -1303,13 +1245,27 @@
 	}
 /* XLarge */
 
-	@include breakpoint('<=xlarge') {
-
+	@include breakpoint('<=xlarge') {		
 		/* Basic */
-
-			body, input, select, textarea {
-				font-size: 14pt;
+		h2{
+			font-size: 3.5rem;
+			font-weight: 300;			
+			line-height: initial;
+			p{
+				font-size: medium;
 			}
+		}
+		h3{			
+			font-size: 2.5rem;
+			font-weight: 300;			
+			line-height: initial;
+		}
+		table{			
+			font-size: 1.5rem;
+			font-weight: 300;			
+			line-height: initial;
+		}
+
 
 		/* Header */
 			#header{				
@@ -1365,12 +1321,12 @@
 				max-width: calc(150px * 1.5);
 			}
 			.bIcon img{
-				max-width: calc(100px * 1.5);
+				max-width: calc(100px * 2);
 			}
 		}
 		#coupon{
 			img{
-				max-width: calc(236px * 1.5);
+				max-width: inherit;
 			}
 		}
 		#share{
@@ -1389,21 +1345,19 @@
 		}	
 	}
 
-/* Large */
+/* Large 1140 */
 
 	@include breakpoint('<=large') {
-
 		/* Basic */
-
-			body, input, select, textarea {
-				font-size: 13pt;
-			}
-
-			h1, h2, h3, h4, h5, h6 {
-				br {
-					display: none;
-				}
-			}
+		h2{
+			font-size: 3rem;
+		}
+		h3{			
+			font-size: 2rem;
+		}
+		table{			
+			font-size: 1.3rem;
+		}
 
 		/* List */
 
@@ -1450,9 +1404,20 @@
 
 	}
 
-/* Medium */
+/* Medium 980 */
 
 	@include breakpoint('<=medium') {
+		/* Basic */
+
+		h2{
+			font-size: 2.3rem;
+		}
+		h3{			
+			font-size: 1.5rem;
+		}
+		table{			
+			font-size: 1.2rem;
+		}
 
 		/* List */
 
@@ -1517,6 +1482,17 @@
 /* Small 736 */
 
 	@include breakpoint('<=small') {
+		/* Basic */
+		h2{
+			font-size: 2rem;
+		}
+		h3{			
+			font-size: 1.5rem;
+		}
+		table{			
+			font-size: 1.1rem;
+		}
+
 		/* Header */
 
 		#header{
@@ -1534,27 +1510,6 @@
 			top: 50%;
 		}
 
-		/* Basic */
-
-			body, input, select, textarea {
-				font-size: 14pt;
-			}
-
-			h1 {
-				font-size: 1.75em;
-			}
-
-			h2 {
-				font-size: 1.5em;
-			}
-
-			h3 {
-				font-size: 1.1em;
-			}
-
-			h4 {
-				font-size: 1em;
-			}
 
 		/* List */
 
@@ -1651,26 +1606,6 @@
 	@include breakpoint('<=xsmall') {
 
 		/* Basic */
-
-		body, input, select, textarea {
-			font-size: 12pt;
-		}
-
-		h1 {
-			font-size: 1.75em;
-		}
-
-		h2 {
-			font-size: 1.5em;
-		}
-
-		h3 {
-			font-size: 1.1em;
-		}
-
-		h4 {
-			font-size: 1em;
-		}
 
 		.container{
 			padding-left: 0;
