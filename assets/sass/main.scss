@@ -1053,10 +1053,11 @@
 
 	#header {
 		@include padding(9em, 0, (0,0,_size(element-margin),0));
-		@include dark(_palette(bg));
+		@include dark(bg);
 		background-attachment:	fixed;
 		background-image:		url('../../images/bg.png');
-		background-position:	center;
+		background-position: 	center center;
+		background-repeat: 		no-repeat;
 		background-size:		cover;
 		overflow: hidden;
 		position: relative;
