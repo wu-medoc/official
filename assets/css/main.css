@@ -2475,7 +2475,7 @@ button:disabled,
   padding: 9em 0 9em 0 ;
   background-color: #47B093;
   color: rgba(255, 255, 255, 0.75);
-  background-attachmentbackground-attachment: fixed;
+  background-attachment: fixed;
   background-image: url("../../images/bg.png");
   background-position: center;
   background-size: cover;
@@ -2904,7 +2904,7 @@ ul.nostyle > li {
     padding: 6em 0 6em 0 ;
     background-attachment: fixed;
     background-image: url("../../images/bg-pc.png");
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     height: 100vh;
   }
@@ -3029,7 +3029,7 @@ ul.nostyle > li {
     padding: 8em 0 8em 0 ;
     background-attachment: fixed;
     background-image: url("../../images/bg.png");
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     height: 80vh;
   }
@@ -3072,7 +3072,7 @@ ul.nostyle > li {
     padding: 8em 0 8em 0 ;
     background-attachment: fixed;
     background-image: url("../../images/bg.png");
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     height: 80vh;
   }
