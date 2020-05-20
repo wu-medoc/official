@@ -1027,7 +1027,7 @@
 			background-attachment:	fixed,							fixed;
 			background-image:		url('images/overlay1.png'),		url('../../images/bg.png');
 			background-size:		auto,							cover;
-			background-color: transparent;
+			background-color: 		transparent;
 		}
 		
 		&.style3 {	
@@ -1059,6 +1059,7 @@
 		background-position: 	center center;
 		background-repeat: 		no-repeat;
 		background-size:		cover;
+		background-color: 		transparent;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
@@ -1278,6 +1279,7 @@
 				background-position: 	center center;
 				background-repeat: 		no-repeat;
 				background-size:		cover;
+				background-color: 		transparent;
 				height: 100vh;
 				
 				h1, p, strong, b {
@@ -1453,6 +1455,7 @@
 				background-position: 	center center;
 				background-repeat: 		no-repeat;
 				background-size:		cover;
+				background-color: 		transparent;
 				height: 80vh;
 				h1, p, strong, b {
 					color: _palette(dark, top-font);
@@ -1501,11 +1504,6 @@
 
 		#header{
 			@include padding(8em, 0, (0,0,_size(element-margin),0));
-			background-image:		url('../../images/bg.png');
-			background-attachment:	fixed;
-			background-position: 	center center;
-			background-repeat: 		no-repeat;
-			background-size:		cover;
 			height: 80vh;
 			h1, p, strong, b {
 				color: _palette(dark, top-font);
@@ -1698,11 +1696,6 @@
 		/* Header */
 			#header{
 				@include padding(4em, 0, (0,0,_size(element-margin),0));
-				background-image:		url('../../images/bg.png');
-				background-attachment:	fixed;
-				background-position: 	center center;
-				background-repeat: 		no-repeat;
-				background-size:		cover;
 				height: 100vh;
 				h1, p, strong, b {
 					color: _palette(dark, top-font);
