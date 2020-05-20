@@ -1018,6 +1018,14 @@
 	.main {
 		@include padding(6em, 0);	
 
+		&.style0 {				
+			@include dark(_palette(bg));
+			background-attachment:	fixed;
+			background-image:		url('../../images/bg.png');
+			background-size:		cover;
+			background-color: 		transparent;
+		}
+
 		&.style1 {
 			background: _palette(bg);
 		}
@@ -1051,18 +1059,8 @@
 
 /* Header */
 
-	#header {
-		@include padding(9em, 0, (0,0,_size(element-margin),0));
-		@include dark(bg);
-		background-image:		url('../../images/bg.png');
-		background-attachment:	fixed;
-		background-position: 	center center;
-		background-repeat: 		no-repeat;
-		background-size:		cover;
-		background-color: 		transparent;
-		overflow: hidden;
-		position: relative;
-		text-align: center;
+	#headerTop {
+		@include padding(9em, 0);
 		height: 80vh;
 		min-height: 350px;
 		.blur-content {
@@ -1147,7 +1145,7 @@
 	}
 
 	body.is-preload {
-		#header {
+		#headerTop {
 			.inner {
 				@include vendor('transform', 'scale(1.05)');
 				opacity: 0;
@@ -1273,14 +1271,8 @@
 
 
 		/* Header */
-			#header{				
-				@include padding(6em, 0, (0,0,_size(element-margin),0));
-				background-image:		url('../../images/bg-pc.png');
-				background-attachment:	fixed;
-				background-position: 	center center;
-				background-repeat: 		no-repeat;
-				background-size:		cover;
-				background-color: 		transparent;
+			#headerTop{				
+				@include padding(6em, 0);
 				height: 100vh;
 				
 				h1, p, strong, b {
@@ -1393,8 +1385,8 @@
 
 		/* Header */
 
-			#header {
-				@include padding(5em, 0, (0,0,_size(element-margin),0));
+			#headerTop {
+				@include padding(5em, 0);
 				//background-attachment: scroll;
 
 				br {
@@ -1449,14 +1441,8 @@
 
 		/* Header */
 
-			#header{
-				@include padding(8em, 0, (0,0,_size(element-margin),0));
-				background-image:		url('../../images/bg.png');
-				background-attachment:	fixed;
-				background-position: 	center center;
-				background-repeat: 		no-repeat;
-				background-size:		cover;
-				background-color: 		transparent;
+			#headerTop{
+				@include padding(8em, 0);
 				height: 80vh;
 				h1, p, strong, b {
 					color: _palette(dark, top-font);
@@ -1503,8 +1489,8 @@
 
 		/* Header */
 
-		#header{
-			@include padding(8em, 0, (0,0,_size(element-margin),0));
+		#headerTop{
+			@include padding(8em, 0);
 			height: 80vh;
 			h1, p, strong, b {
 				color: _palette(dark, top-font);
@@ -1639,8 +1625,8 @@
 					}
 				}
 			}
-			#header {
-				@include padding(4em, 0, (0,0,_size(element-margin),0));
+			#headerTop {
+				@include padding(4em, 0);
 
 				br {
 					display: none;
@@ -1695,8 +1681,8 @@
 			}
 
 		/* Header */
-			#header{
-				@include padding(4em, 0, (0,0,_size(element-margin),0));
+			#headerTop{
+				@include padding(4em, 0);
 				height: 100vh;
 				h1, p, strong, b {
 					color: _palette(dark, top-font);
