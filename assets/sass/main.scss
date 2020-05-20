@@ -1037,6 +1037,7 @@
 			background-size:		contain,							contain;
 			background-repeat: 		no-repeat,							no-repeat;			
 			background-position-x: 	left,								right;
+			background-position-y: 	center,								center;
 		}
 		
 		&.style4 {
@@ -1053,9 +1054,9 @@
 	#header {
 		@include padding(9em, 0, (0,0,_size(element-margin),0));
 		@include dark();
-		background-attachment:	fixed;
+		background-attachmentbackground-attachment:	fixed;
 		background-image:		url('../../images/bg.png');
-		background-position:	center center;
+		background-position:	center;
 		background-size:		cover;
 		overflow: hidden;
 		position: relative;
