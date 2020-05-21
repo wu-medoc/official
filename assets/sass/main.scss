@@ -197,6 +197,17 @@
 			-webkit-columns: 3;
 			-moz-columns: 3;
 		}
+		img{
+			width: auto;
+			max-width: 60px;
+		}
+		
+		@include breakpoint('<=small') {
+			img{
+				width: auto;
+				max-width: 40px;
+			}
+		}
 	}
 
 	#precautions{
