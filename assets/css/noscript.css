@@ -1,15 +1,2 @@
-/* Header */
-body.is-preload #header .inner {
-  transform: none;
-  opacity: 1;
-}
-
-body.is-preload #header .inner .actions {
-  transform: none;
-  opacity: 1;
-}
-
-body.is-preload #header:after {
-  opacity: 0;
-}
+body:before,body:after{display:none}
 /*# sourceMappingURL=noscript.css.map */
