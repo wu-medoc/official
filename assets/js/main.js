@@ -2,7 +2,7 @@
 
 	var	$window = $(window),
 		$body = $('body'),
-		$header = $('#header'),
+		$header = $('header'),
 		$all = $body.add($header);
 
 	// Breakpoints.
