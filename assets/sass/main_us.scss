@@ -1,0 +1,355 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300");
+@import url('fontawesome-all.min.css');
+
+// Breakpoints.
+
+	@include breakpoints((
+		xxlarge: ( 1681px,  1920px ), 
+		xlarge:  ( 1281px,  1680px ),
+		large:   ( 1001px,  1280px ),
+		medium:  ( 737px,   1000px ),
+		small:   ( 481px,   736px  ),
+		xsmall:  ( 321px,    480px  ),
+		xxsmall:  ( null,    320px  )
+	));
+
+// Base.
+
+	@import 'base/reset';
+	@import 'base/page';
+	@import 'base/typography';
+
+// Component.
+
+	@import 'components/box';
+	@import 'components/button';
+	@import 'components/form';
+	@import 'components/icon';
+	@import 'components/image';
+	@import 'components/list';
+	@import 'components/actions';
+	@import 'components/icons';
+	@import 'components/section';
+	@import 'components/table';
+	@import 'components/poptrox-popup';
+	@import 'components/gallery';
+
+// Layout.
+
+	@import 'layout/header';
+	@import 'layout/mainUs';
+	@import 'layout/footer';
+
+
+/* carousel -dots style */
+	.carousel-indicators li {
+		padding-left: 0;
+		width: 10px;
+		height: 10px;
+		border-radius: 100%;
+	}
+
+/* introMobii */
+
+	header#headerMobii {
+		&.major {
+			margin: 1em 0;
+			h3{
+				font-size: x-large;
+			}
+			&:after {
+				content: '';
+				display: inline-block;
+				background: _palette(accent1, bg);
+				margin-top: (_size(element-margin) * 0.75);
+				height: 4px;
+				width: 4em;
+				border-radius: 15%;
+				position: relative;
+				top: -1em;
+			}
+		}
+	}
+
+/* user dropdown */
+	.mobiidrop{ 
+		&.nav {
+		position: relative;
+		}
+		&.nav>li>a:hover, .nav>li>a:focus, .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+			color: _palette(top-bg);
+		}
+		a.dropdown-toggle{
+		color: _palette(blue-dark);
+		}
+		.dropdown {
+			border-radius:4px;
+		}
+		.dropdown-toggle::after {
+		display:none;
+		}
+		.dropdown-menu>li>a {
+			color:#fff;
+			&:hover{
+			color: _palette(top-bg);
+			}
+		}
+		.dropdown ul.dropdown-menu {
+			background: _palette(blue-dark);
+			border-radius: 4px;
+			box-shadow: none;
+			margin-top: 11px;
+			min-width: 7.5rem;
+			padding: .5em;
+			li{
+			text-align: center;
+			border-bottom: 0.5px solid rgba(182, 192, 213, 0.5);
+			&:last-child{
+				border-bottom: 0px;
+			}
+			}
+			img{
+			width: 24px;
+			height: 24px;
+			vertical-align: bottom;
+			}
+		}
+		.dropdown ul.dropdown-menu:before {
+			content: "";
+			border-bottom: 6px solid _palette(blue-dark);
+			border-right: 6px solid transparent;
+			border-left: 6px solid transparent;
+			position: absolute;
+			top: -6px;
+			right: 8px;
+			z-index: 10;
+		}
+		.dropdown ul.dropdown-menu:after {
+			content: "";
+			border-bottom: 8px solid _palette(blue-dark);
+			border-right: 8px solid transparent;
+			border-left: 8px solid transparent;
+			position: absolute;
+			top: -8px;
+			right: 6px;
+			z-index: 9;
+		}
+	}
+  
+/* Section */
+
+$numberXXL : 2 ;
+$numberXL : 1.5 ;
+$numberL : 1.3;	
+$numberM : 1.2;
+$numberS : 1.1;
+$numberXXS : 0.75;
+	#introMobii{
+		.s-item{
+			align-items: center;
+			a.usbtn{
+				white-space: nowrap;
+				&.b-top{
+					display: none;
+				}
+				&.b-down{
+					width: 150px;
+					margin-top: 1em;
+					display: block;
+				}
+			}
+		}
+	}	
+	#funpass{	
+		ul {
+			columns: 3;
+			-webkit-columns: 3;
+			-moz-columns: 3;
+		}		
+	}
+
+	@include breakpoint('<=xxlarge') {
+		#introMobii{
+			.s-item{
+				img.sImg1-1{
+					width: 318px * $numberXXL;
+				}
+				img.sImg1-2{
+					width: 276px * $numberXXL;
+				}								
+				a.usbtn{
+					&.b-top{
+						display: block;
+					}
+					&.b-down{
+						display: none;
+					}
+				}		
+			}	
+		}		
+		#funpass{
+			img.sImg2-1{
+				width: 250px * $numberXXL ;
+			}
+			img.sImg2-2{
+				width: 219px * $numberXXL ;
+			}
+			img.sImg2-3{
+				width: 216px * $numberXXL;
+			}
+		}
+	}
+	
+	@include breakpoint('<=xlarge') {
+		#introMobii{
+			.s-item{
+				img.sImg1-1{
+					width: 318px * $numberXL;
+				}
+				img.sImg1-2{
+					width: 276px * $numberXL;
+				}		
+			}	
+		}		
+		#funpass{
+			img.sImg2-1{
+				width: 250px * $numberXL ;
+			}
+			img.sImg2-2{
+				width: 219px * $numberXL ;
+			}
+			img.sImg2-3{
+				width: 216px * $numberXL ;
+			}
+		}
+	}
+
+	@include breakpoint('<=large') {
+		#introMobii{
+			.s-item{
+				img.sImg1-1{
+					width: 318px * $numberL;
+				}
+				img.sImg1-2{
+					width: 276px * $numberL;
+				}		
+			}	
+		}			
+		#funpass{
+			img.sImg2-1{
+				width: 250px * $numberL ;
+			}
+			img.sImg2-2{
+				width: 219px * $numberL ;
+			}
+			img.sImg2-3{
+				width: 216px * $numberL ;
+			}
+		}
+	}
+
+	@include breakpoint('<=medium') {	
+		#introMobii{
+			.s-item{
+				img.sImg1-1{
+					width: 318px * $numberM;
+				}
+				img.sImg1-2{
+					width: 276px * $numberM;
+				}	
+			}	
+		}				
+		#funpass{
+			img.sImg2-1{
+				width: 250px * $numberM ;
+			}
+			img.sImg2-2{
+				width: 219px * $numberM ;
+			}
+			img.sImg2-3{
+				width: 216px * $numberM;
+			}
+		}
+	}
+	
+	@include breakpoint('<=small') {	
+		#introMobii{
+			.s-item{
+				img.sImg1-1{
+					width: 318px * $numberS;
+				}
+				img.sImg1-2{
+					width: 276px * $numberS;
+				}										
+				a.usbtn{
+					&.b-top{
+						display: none;
+					}
+					&.b-down{
+						display: block;
+					}
+				}	
+			}	
+		}
+		#funpass{	
+			ul {
+				columns: 1;
+				-webkit-columns: 1;
+				-moz-columns: 1;
+			}		
+		}
+	}
+	
+	@include breakpoint('<=xsmall') {
+		#introMobii{
+			.s-item{
+				img.sImg1-1{
+					width: 318px;
+				}
+				img.sImg1-2{
+					width: 276px;
+				}	
+			}
+		}
+		#funpass{
+			img.sImg2-1{
+				width: 250px ;
+			}
+			img.sImg2-2{
+				width: 219px ;
+			}
+			img.sImg2-3{
+				width: 216px ;
+			}
+		}
+	}
+
+	@include breakpoint('<=xxsmall') {	
+		#introMobii{
+			.s-item{
+				img.sImg1-1{
+					width: 318px * $numberXXS;
+				}
+				img.sImg1-2{
+					width: 276px * $numberXXS;
+				}
+			}	
+		}					
+		#funpass{
+			img.sImg2-1{
+				width: 250px * $numberXXS ;
+			}
+			img.sImg2-2{
+				width: 219px * $numberXXS ;
+			}
+			img.sImg2-3{
+				width: 216px * $numberXXS;
+			}
+		}
+	}

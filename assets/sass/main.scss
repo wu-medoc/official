@@ -7,7 +7,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300");
 @import url('fontawesome-all.min.css');
 
-
 // Breakpoints.
 
 	@include breakpoints((
@@ -46,6 +45,14 @@
 	@import 'layout/main';
 	@import 'layout/footer';
 
+/* carousel -dots style */
+	.carousel-indicators li {
+		padding-left: 0;
+		width: 10px;
+		height: 10px;
+		border-radius: 100%;
+	}
+	
 /* Intro */
 
 	#intro {
@@ -74,6 +81,40 @@
 		}
 
 	}
+
+/* header title */
+	header#header5g {
+		&.major {
+			margin: 1em 0;
+			h3{
+				font-size: x-large;
+			}
+			&:after {
+				content: '';
+				display: inline-block;
+				background: _palette(accent1, bg);
+				margin-top: (_size(element-margin) * 0.75);
+				height: 4px;
+				width: 4em;
+				border-radius: 15%;
+				position: relative;
+				top: -1em;
+			}
+		}
+
+		&.special {
+			text-align: center;
+		}
+		@include breakpoint('<=xsmall') {
+			&.major {
+				h3{
+					font-size: large;
+				}
+			}
+		}
+
+	}
+
 
 /* Section */
 
@@ -276,45 +317,4 @@
 				padding: 1em 1em 2em 1em;
 			}
 		}
-	}
-
-/* header title */
-	header#header5g {
-		&.major {
-			margin: 1em 0;
-			h3{
-				font-size: x-large;
-			}
-			&:after {
-				content: '';
-				display: inline-block;
-				background: _palette(accent1, bg);
-				margin-top: (_size(element-margin) * 0.75);
-				height: 4px;
-				width: 4em;
-				border-radius: 15%;
-				position: relative;
-				top: -1em;
-			}
-		}
-
-		&.special {
-			text-align: center;
-		}
-		@include breakpoint('<=xsmall') {
-			&.major {
-				h3{
-					font-size: large;
-				}
-			}
-		}
-
-	}
-
-	/* carousel -dots style */
-	.carousel-indicators li {
-		padding-left: 0;
-		width: 10px;
-		height: 10px;
-		border-radius: 100%;
 	}

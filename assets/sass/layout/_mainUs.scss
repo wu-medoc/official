@@ -1,0 +1,89 @@
+/* Main */
+
+	.main {
+		@include vendor('display', 'flex');
+		position: relative;
+		margin: 0;
+		overflow-x: hidden;
+
+
+		&.fullscreen {
+			min-height: 100%;
+		}
+		
+		&.styleUsIntro {
+			@include vendor('align-items', 'center');
+			@include vendor('justify-content', 'center');
+			text-align: center;
+			padding: 2.5em;
+			flex-direction: row-reverse;
+			&.bg-ye {
+				background: _palette(us, bg-ye);
+			}
+		}
+
+		&.styleUs {
+			@include vendor('align-items', 'center');
+			@include vendor('justify-content', 'center');
+			text-align: center;
+			padding: 3em 0;
+			flex-direction: column;
+			&.bg-gr {
+				color: #ffffff;
+				background: _palette(us, bg-gr);
+			}
+			h3{
+				margin: 1em 0;
+			}
+		}
+
+		body.is-touch & {
+			background-attachment: scroll !important;
+		}
+
+		@include breakpoint('<=xxlarge') {
+			// &.style2 {
+			// 	.content {
+			// 		width: 40%;
+			// 	}
+			// }
+		}
+
+		@include breakpoint('<=large') {
+			// &.style2 {
+			// 	.content {
+			// 		width: 50%;
+			// 	}
+			// }
+		}
+
+		@include breakpoint('<=medium') {
+			&.styleUsIntro {
+				h2{
+					font-size: 2em;
+					white-space: nowrap;
+				}
+			}
+		}
+
+		@include breakpoint('<=small') {
+			&.styleUsIntro {
+				flex-direction: column;
+			}
+			&.styleUs {
+				padding: 2em .25em;
+			}
+
+		}
+
+		@include breakpoint('<=small') {
+			&.styleUs {
+				padding: 2em .25em;
+
+			}
+
+		}
+		@include breakpoint('<=xxsmall') {
+
+		}
+	}

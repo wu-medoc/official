@@ -17,7 +17,7 @@
 
 // Font.
 	$font: (
-		family:				('Source Sans Pro', 'sans-serif'),
+		family:				('Source Sans Pro', 'sans-serif','Noto Sans TC'),
 		weight:				300,
 		weight-bold:		900
 	);
@@ -26,8 +26,10 @@
 	$palette: (
 		top-bg:				#018BD3,
 		font-color:			#0250A4,
+		blue-dark:			#13334C,
 		bg-y:				#FFFAED,
 		bg:					#ffffff,
+		bg-o:				rgba(255, 255, 255, .95),
 		bg-alt:				#EAEAEA,
 		fg:					#39454b,
 		fg-bold:			#39454b,
@@ -45,7 +47,7 @@
 			border:			#ffffff
 		),
 		accent2: (
-			bg:				#9ac8e9,
+			bg:				#FD5F00,
 			fg:				#ffffff,
 			fg-bold:		#ffffff,
 			border:			#ffffff
@@ -55,5 +57,9 @@
 			fg:				#ffffff,
 			fg-bold:		rgba(185,186,187,1),
 			border:			#C4C4C4,
+		),
+		us: (
+			bg-ye: 			#FFE402,
+			bg-gr: 			#04785A,
 		)
 	);
