@@ -142,14 +142,14 @@
 		}
 	}
   
-/* Section */
 
-$numberXXL : 2 ;
-$numberXL : 1.5 ;
-$numberL : 1.3;	
-$numberM : 1.2;
-$numberS : 1.1;
-$numberXXS : 0.75;
+/* Section */
+	$numberXXL : 2 ;
+	$numberXL : 1.5 ;
+	$numberL : 1.3;	
+	$numberM : 1.2;
+	$numberS : 1.1;
+	$numberXXS : 0.75;
 	#introMobii{
 		.s-item{
 			align-items: center;
@@ -167,11 +167,69 @@ $numberXXS : 0.75;
 		}
 	}	
 	#funpass{	
-		ul {
-			columns: 3;
-			-webkit-columns: 3;
-			-moz-columns: 3;
-		}		
+		.fbox{
+			flex-direction: row;
+		}
+		.sBox2-3{
+			position: relative;
+			width: 100%;
+			.sImg2-3{
+				position: relative;
+				top: 0;
+				right: 0;
+			}
+			.sTxt2-3{
+				position: absolute;
+				top: 72%;
+				left: -58px;
+			}
+		}
+	}
+
+	#functionIcon{
+		background: _palette(icon-bg);
+		img{
+			width: 64px * 1.5;
+		}
+		// 	ul{
+		// 		columns: 3;
+		// 		-webkit-columns: 3;
+		// 		-moz-columns: 3;
+		// 	}
+		.row {
+			width: 80%;
+			margin: 0 auto;
+			> div{
+				padding-top: 1em;
+			}
+		}
+	}
+	.a-item.imgbox{
+		width: 100%;
+		overflow: hidden;
+		margin: 1em;
+		&.left{
+			position: relative;
+			left: 2%;
+		}
+		&.right{
+			position: relative;
+			right: 2%;
+		}
+		img {
+			width: auto;
+			max-height: 500px;
+		}
+	}
+	#mobiiDownload{
+		padding: 6em 0;
+		.mApp{
+			width: 60px * 1.2;
+		}
+		.mTxt{
+			width: 120px * 1.2;
+			margin-bottom: 1em;
+		}
 	}
 
 	@include breakpoint('<=xxlarge') {
@@ -267,14 +325,28 @@ $numberXXS : 0.75;
 		}				
 		#funpass{
 			img.sImg2-1{
-				width: 250px * $numberM ;
+				width: 250px ;
 			}
 			img.sImg2-2{
-				width: 219px * $numberM ;
+				width: 219px ;
 			}
 			img.sImg2-3{
-				width: 216px * $numberM;
+				width: 216px ;
 			}
+			.sBox2-3{
+				.sImg2-3{
+					position: relative;
+					top: 0;
+					right: 0;
+					transform: translate(10%, 0);
+				}
+				.sTxt2-3{
+					position: absolute;
+					top: 62%;
+					left: auto;
+					transform: translate(-50%, 75%);
+				}
+			}	
 		}
 	}
 	
@@ -297,12 +369,44 @@ $numberXXS : 0.75;
 				}	
 			}	
 		}
-		#funpass{	
-			ul {
-				columns: 1;
-				-webkit-columns: 1;
-				-moz-columns: 1;
-			}		
+		#funpass{
+			.fbox{
+				flex-direction: column;
+			}
+			.sBox2-3{
+				.sImg2-3{
+					position: relative;
+					top: 0;
+					right: 0;
+					transform: translate(10%, 0);
+				}
+				.sTxt2-3{
+					position: absolute;
+					top: 62%;
+					left: -12%;
+					transform: translate(0, 0);
+				}
+			}	
+		}
+		.a-item.imgbox{
+			&.left{
+				position: relative;
+				left: 15%;
+			}
+			&.right{
+				position: relative;
+				right: 15%;
+			}
+		}
+		#mobiiDownload{
+			padding: 8em 0;
+			.mApp{
+				width: 60px;
+			}
+			.mTxt{
+				width: 120px;
+				margin-bottom: 1em;
+			}
 		}
 	}
 	
@@ -328,6 +432,11 @@ $numberXXS : 0.75;
 				width: 216px ;
 			}
 		}
+		#functionIcon{
+			img{
+				width: 64px;
+			}
+		}
 	}
 
 	@include breakpoint('<=xxsmall') {	
@@ -351,5 +460,21 @@ $numberXXS : 0.75;
 			img.sImg2-3{
 				width: 216px * $numberXXS;
 			}
+			
+			.sBox2-3{
+				.sImg2-3{
+					position: relative;
+					top: 0;
+					right: 0;
+					transform: translate(10%, 0);
+				}
+				.sTxt2-3{
+					position: absolute;
+					top: 62%;
+					left: -25%;
+					transform: translate(0, 0);
+				}
+			}	
 		}
 	}
+

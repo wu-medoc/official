@@ -1,5 +1,4 @@
 /* Gallery */
-
 	.gallery {
 		@include vendor('display', 'flex');
 		@include vendor('flex-wrap', 'wrap');

@@ -36,7 +36,24 @@
 				}
 			}
 		}
-
+		ul.us-icon{
+			columns: 2;
+			-webkit-columns: 2;
+			-moz-columns: 2;
+			img{
+				width: 40px;
+			}
+		}
+		.us-gray{
+			color: _palette(us, bg-ft);
+			.mlogo-gray{
+				width: 68px;
+			}
+			p{
+				margin-bottom: 0;
+				font-weight: 500;
+			}
+		}
 		@include breakpoint('<=medium') {
 			@include vendor('flex-direction', 'column');
 			@include vendor('justify-content', 'center');
@@ -50,7 +67,11 @@
 		}
 
 		@include breakpoint('<=small') {
-			
+			.us-gray{
+				p{
+					font-size: small;
+				}
+			}
 			h3 {
 				font-size: medium;
 			}

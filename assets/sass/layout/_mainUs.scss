@@ -6,6 +6,10 @@
 		margin: 0;
 		overflow-x: hidden;
 
+		h3{
+			margin: 1em 0 .5em 0;
+			font-size: 1.5em;
+		}
 
 		&.fullscreen {
 			min-height: 100%;
@@ -28,13 +32,71 @@
 			text-align: center;
 			padding: 3em 0;
 			flex-direction: column;
+			p{
+				margin-bottom: 0;
+			}
+			&.bg-ff{				
+				background: _palette(bg);
+			}
+			&.bg-li {
+				background: _palette(us, bg-li);
+			}
 			&.bg-gr {
 				color: #ffffff;
 				background: _palette(us, bg-gr);
 			}
-			h3{
-				margin: 1em 0;
+			&.bg-gr1 {
+				color: #ffffff;
+				background: _palette(us, bg-gr1);
 			}
+			&.bg-or {
+				color: #ffffff;
+				background: _palette(us, bg-or);
+			}
+			&.bg-pu {
+				color: #ffffff;
+				background: _palette(us, bg-pu);
+			}
+			&.bg-bl {
+				color: #ffffff;
+				background: _palette(us, bg-bl);
+			}
+		}
+
+
+		&.styleUs2 {
+			@include vendor('align-items', 'center');
+			@include vendor('justify-content', 'center');
+			padding: 3em 0;
+			overflow: hidden;
+
+			> .content {
+				@include vendor('transition', 'transform #{_duration(fade-in)} ease');
+				@include vendor('transform', 'translateZ(0)');
+				position: relative;
+				width: 100%;
+				margin: 0;
+			}
+
+			&.left {
+				@include vendor('justify-content', 'flex-start');
+				margin-left: 15%;
+			}
+
+			&.right {
+				@include vendor('justify-content', 'flex-end');
+			}
+
+			&.inactive {
+				&.left > .content {
+					@include vendor('transform', 'translateX(-40%)');
+				}
+
+				&.right > .content {
+					@include vendor('transform', 'translateX(40%)');
+				}
+			}
+			
 		}
 
 		body.is-touch & {

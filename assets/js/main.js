@@ -131,7 +131,7 @@
 							leave:		function() { $(this).addClass('inactive'); }
 						});
 
-					$('.main.style2')
+					$('.main.styleUs.bg-ff')
 						.scrollex({
 							mode:		'middle',
 							delay:		100,
@@ -164,7 +164,7 @@
 					$('.main.style1')
 						.unscrollex();
 
-					$('.main.style2')
+					$('.main.styleUs.bg-ff')
 						.unscrollex();
 
 				// Contact.
