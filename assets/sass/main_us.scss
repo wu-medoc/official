@@ -164,6 +164,17 @@
 					display: block;
 				}
 			}
+			.sImg1-1{
+				animation-name: mrotate;
+				animation-duration: 1s;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: infinite;
+			}
+			@keyframes mrotate {
+				0%   	{transform: rotate(0deg);}
+				50%	 	{transform: rotate(4deg);}
+				100%	{transform: rotate(0deg);}
+			}
 		}
 	}	
 	#funpass{	
@@ -177,6 +188,15 @@
 				position: relative;
 				top: 0;
 				right: 0;
+				animation-name: mfloat;
+				animation-duration: 1s;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: infinite;
+			}
+			@keyframes mfloat {
+				0%   	{transform: translateY(0);}
+				50%	 	{transform: translateY(-8px);}
+				100%	{transform: translateY(0);}
 			}
 			.sTxt2-3{
 				position: absolute;
@@ -204,18 +224,33 @@
 			}
 		}
 	}
+	
+	.left.inactive{
+		animation-name: moveleft;
+		animation-duration: 1s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: 1;
+	}
+	.right.inactive{
+		animation-name: moveright;
+		animation-duration: 1s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: 1;
+	}
+	@keyframes moveleft {
+		0%   {left:0px; top:0px;}
+		50%	 {left:50px; top:0px;}
+		100%	 {left:0px; top:0px;}
+	}
+	@keyframes moveright {
+		0%   {right:0px; top:0px;}
+		50%	 {right:50px; top:0px;}
+		100%	 {right:0px; top:0px;}
+	}
 	.a-item.imgbox{
 		width: 100%;
 		overflow: hidden;
 		margin: 1em;
-		&.left{
-			position: relative;
-			left: 2%;
-		}
-		&.right{
-			position: relative;
-			right: 2%;
-		}
 		img {
 			width: auto;
 			max-height: 500px;
@@ -225,12 +260,26 @@
 		padding: 6em 0;
 		.mApp{
 			width: 60px * 1.2;
+			&:hover {
+				transform: scale(1.2, 1.2);
+			}
 		}
 		.mTxt{
 			width: 120px * 1.2;
 			margin-bottom: 1em;
 		}
 	}
+	.titlebox{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		white-space: nowrap;
+		img {
+			width: 150px * 1.5;
+		}
+	}
+
 
 	@include breakpoint('<=xxlarge') {
 		#introMobii{
@@ -388,16 +437,6 @@
 				}
 			}	
 		}
-		.a-item.imgbox{
-			&.left{
-				position: relative;
-				left: 15%;
-			}
-			&.right{
-				position: relative;
-				right: 15%;
-			}
-		}
 		#mobiiDownload{
 			padding: 8em 0;
 			.mApp{
@@ -406,6 +445,11 @@
 			.mTxt{
 				width: 120px;
 				margin-bottom: 1em;
+			}
+		}
+		.titlebox{
+			img {
+				width: 150px *1.2;
 			}
 		}
 	}
@@ -435,6 +479,11 @@
 		#functionIcon{
 			img{
 				width: 64px;
+			}
+		}
+		.titlebox{
+			img {
+				width: 150px;
 			}
 		}
 	}
@@ -475,6 +524,11 @@
 					transform: translate(0, 0);
 				}
 			}	
+		}
+		.titlebox{
+			img {
+				width: 100px;
+			}
 		}
 	}
 
