@@ -84,7 +84,7 @@
 		left: 0;
 		top: 0;
 		width: 100%;
-		background: transparentize(_palette(top-bg), 0.05);
+		background: _palette(bg-o);
 		box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.1);
 		margin-bottom: 0;
 		height: 3em;
@@ -105,8 +105,7 @@
 			line-height: 2.5em;
 
 			h1 {
-				padding: .1em;
-				text-align: center;
+				padding: .1em .5em;
 			}
 
 		}

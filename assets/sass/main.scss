@@ -53,14 +53,58 @@
 		border-radius: 100%;
 	}
 	
+	.major {
+		margin: 1em 0;
+		h3{
+			font-size: x-large;
+		}
+		&:after {
+			content: '';
+			display: inline-block;
+			background: _palette(hi5,bg-g);
+			margin-top: (_size(element-margin) * 0.75);
+			height: 4px;
+			width: 4em;
+			border-radius: 15%;
+			position: relative;
+			top: -1em;
+		}
+	}
+/* header title */
+	header#header5g {
+
+		&.special {
+			text-align: center;
+		}
+		@include breakpoint('<=xsmall') {
+			&.major {
+				h3{
+					font-size: large;
+				}
+			}
+		}
+
+		#headerbtn{
+			position: fixed;
+			top: .1em;
+			right: .5em;
+			z-index: 1030;
+			.button{
+				height: 1.6em;
+				line-height: 1.6em;
+				padding: 0 1.5em;
+			}
+		}
+
+	}
+
+
 /* Intro */
 
 	#intro {
-		background: url('../../images/bg.png');
-		background-size: cover;
-		background-attachment: fixed;
-		background-position: center center;
-		background-repeat: no-repeat;
+		.topIcon{
+			width: 295px * 1.5;
+		}
 		
 		h2 {
 			font-size: 3em;
@@ -74,47 +118,40 @@
 			color: _palette(font-color);
 			font-weight: 600;
 		}
+		
+		.border-b {
+			margin: 0 0 .5em 0;
+	
+			&:after {
+				background: _palette(hi5,bg-g);
+				content: '';
+				display: block;
+				height: 3px;
+				margin: 0 auto;
+				margin-top: 0.5em;
+				width: 7em;
+				border-radius: 15%;
+				top: -1em;
+			}
+		}
+		@include breakpoint('<=medium') {
+			.topIcon{
+				width: 295px * 1.1;
+			}
+			h2 {
+				font-size: 2.2em;
+			}
+		}
 		@include breakpoint('<=small') {
+			.topIcon{
+				width: 295px;
+			}
 			h2 {
 				font-size: 2em;
 			}
 		}
 
 	}
-
-/* header title */
-	header#header5g {
-		&.major {
-			margin: 1em 0;
-			h3{
-				font-size: x-large;
-			}
-			&:after {
-				content: '';
-				display: inline-block;
-				background: _palette(accent1, bg);
-				margin-top: (_size(element-margin) * 0.75);
-				height: 4px;
-				width: 4em;
-				border-radius: 15%;
-				position: relative;
-				top: -1em;
-			}
-		}
-
-		&.special {
-			text-align: center;
-		}
-		@include breakpoint('<=xsmall') {
-			&.major {
-				h3{
-					font-size: large;
-				}
-			}
-		}
-
-	}
-
 
 /* Section */
 
@@ -142,21 +179,6 @@
 		}
 		p{
 			margin-bottom: 0;
-		}
-		.border-b {
-			margin: 0 0 .5em 0;
-	
-			&:after {
-				background: _palette(fg-bold);
-				content: '';
-				display: block;
-				height: 3px;
-				margin: 0 auto;
-				margin-top: 0.5em;
-				width: 7em;
-				border-radius: 15%;
-				top: -1em;
-			}
 		}
 		@include breakpoint('<=small') {
 			img.mlogo-r {

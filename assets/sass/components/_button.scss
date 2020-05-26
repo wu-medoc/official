@@ -20,8 +20,12 @@
 		text-align: center;
 		text-decoration: none;
 		&.mobiibtn{
-			background-color: _palette(accent1, bg);
+			background-color: _palette(hi5, bg-g);
 			text-decoration: none;
+			&:hover {
+				color:_palette(hi5, bg-y);
+				background-color: lighten(_palette(font-color), 5);
+			}	
 		}
 		&.usbtn{			
 			background-color: _palette(accent2, bg);

@@ -5,7 +5,16 @@
 		position: relative;
 		margin: 0;
 		overflow-x: hidden;
-
+		&.styleIntro {
+			@include vendor('align-items', 'center');
+			@include vendor('justify-content', 'center');
+			text-align: center;
+			padding: 2.5em;
+			flex-direction: row;
+			&.bg-y{
+				background: _palette(hi5,bg-y);
+			}
+		}
 		> .content {
 			width: 45em;
 			max-width: calc(100% - 4em);
@@ -141,7 +150,9 @@
 					display: none;
 				}
 			}
-
+			&.styleIntro {
+				flex-direction: column;
+			}
 			&.style1 {
 				padding: 2em .25em;
 

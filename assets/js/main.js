@@ -152,6 +152,7 @@
 							leave:		function() { $(this).addClass('inactive'); }
 						});
 
+
 			};
 
 			var off = function() {
@@ -170,6 +171,7 @@
 				// Contact.
 					$('#contact')
 						.unscrollex();
+
 
 			};
 
@@ -209,5 +211,11 @@
 			.on('load', function() {
 				$window.trigger('resize');
 			});
+		
+			$(document).on( 'scroll', function(){        
+                ($(window).scrollTop() > 400) ?
+					$('#headerbtn').addClass('d-block'):
+					$('#headerbtn').removeClass('d-block');
+            });
 
 })(jQuery);
