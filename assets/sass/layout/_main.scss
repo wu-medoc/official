@@ -28,12 +28,18 @@
 		&.fullscreen {
 			min-height: 100%;
 		}
-		&.style1 {
+		&.styleHi{
 			@include vendor('align-items', 'center');
 			@include vendor('justify-content', 'center');
 			text-align: center;
 			padding: 3em 0;
-			flex-direction: column;
+			flex-direction: column;			
+			&.bg-gl{
+				background: _palette(hi5,bg-gl);
+			}
+			&.bg-y{
+				background: _palette(hi5,bg-y);
+			}
 			&.secondary {
 				background: _palette(bg-alt);
 			}
@@ -153,7 +159,7 @@
 			&.styleIntro {
 				flex-direction: column;
 			}
-			&.style1 {
+			&.styleHi{
 				padding: 2em .25em;
 
 				h2 {

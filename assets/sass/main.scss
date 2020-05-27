@@ -15,7 +15,8 @@
 		large:   ( 1001px,  1280px ),
 		medium:  ( 737px,   1000px ),
 		small:   ( 481px,   736px  ),
-		xsmall:  ( null,    480px  )
+		xsmall:  ( 321px,    480px  ),
+		xxsmall:  ( null,    320px  )
 	));
 
 // Base.
@@ -51,6 +52,7 @@
 		width: 10px;
 		height: 10px;
 		border-radius: 100%;
+		background-color: _palette(border);
 	}
 	
 	.major {
@@ -69,6 +71,16 @@
 			position: relative;
 			top: -1em;
 		}
+		@include breakpoint('<=xxlarge') {
+			h3{
+				font-size: 2em;
+			}
+		}
+		@include breakpoint('<=small') {
+			h3{
+				font-size: x-large;
+			}
+		}
 	}
 /* header title */
 	header#header5g {
@@ -76,17 +88,10 @@
 		&.special {
 			text-align: center;
 		}
-		@include breakpoint('<=xsmall') {
-			&.major {
-				h3{
-					font-size: large;
-				}
-			}
-		}
-
+		
 		#headerbtn{
 			position: fixed;
-			top: .1em;
+			top: .6em;
 			right: .5em;
 			z-index: 1030;
 			.button{
@@ -95,6 +100,25 @@
 				padding: 0 1.5em;
 			}
 		}
+
+		@include breakpoint('<=xsmall') {
+			&.major {
+				h3{
+					font-size: large;
+				}
+			}
+			img.Logo{
+				padding-top: .1em;
+				max-width: 178px;
+			}
+			#headerbtn{
+				position: fixed;
+				top: .1em;
+				right: .5em;
+				z-index: 1030;
+			}
+		}
+
 
 	}
 
@@ -155,102 +179,139 @@
 
 /* Section */
 
-	#busTime, 
-	#beforehand {
-		background-attachment:	fixed,								fixed;
-		background-image:		url('../../images/bg-l.png'),		url('../../images/bg-r.png');
-		background-size:		contain,							contain;
-		background-repeat: 		no-repeat,							no-repeat;			
-		background-position-x: 	left,								right;
-		background-position-y: 	center,								center;
-
-		
+	#beforehand {		
+		.row {
+			width: 80%;
+			margin: 0 auto;
+			> div{
+				padding-top: 1em;
+			}
+		}
+		img.ficon{
+			width: 64px * 1.5;
+		}		
 		img.mlogo-r {
 			width: auto;
-			max-width: calc(150px * 1.7);
-		}
-		.bIcon{
-			li{
-				padding: .5em;
-				img{
-					max-width: calc(82px * 1.7);
-				}
-			}
+			max-width: calc(150px * 1.5);
 		}
 		p{
 			margin-bottom: 0;
 		}
-		@include breakpoint('<=small') {
+		@include breakpoint('<=xxlarge') {
+			#beforehand {
+				img.ficon{
+					width: 64px * 1.5;
+				}
+			}
+		}
+		@include breakpoint('<=small') {	
+			.row {
+				width: 100%;
+			}
+			img.ficon{
+				width: 64px;
+			}
 			img.mlogo-r {
 				width: auto;
 				max-width: 150px;
-			}
-			.bIcon{
-				li{
-					padding: .2em;
-					img{
-						max-width: 82px;
-					}
-				}
 			}
 		}		
 	}
 
 	#coupon {
-		background: _palette(bg-y);
-		ul li img{
-			width: auto;
-			max-width: calc(236px * 2);
+		.couponbox{			
+			width: 281px * 1.2;
+			img{
+				width: auto;
+			}
 		}
 		
 		@include breakpoint('<=small') {
-			ul li img{
-				width: auto;
-				max-width: 236px;
+			.couponbox{			
+				width: 281px;
+				img{
+					width: auto;
+				}
 			}
 		}
 	}
 
-	#busTime, 
-	#busMap, 
-	#bus, 
 	#discount{
-		.container{
-			padding: 0;
-			display: flex;
+		ul{
+			columns: 2;
+			-webkit-columns: 2;
+			-moz-columns: 2;
+			>li{
+				padding-right: .5em;
+				padding-bottom: .5em;
+			}
+			img{
+				width: 100%;
+			}
+		}
+		@include breakpoint('<=xxlarge') {	
+			ul{
+				columns: 2;
+				-webkit-columns: 2;
+				-moz-columns: 2;
+			}
+			img{
+				width: 450px;
+			}
+		}
+		@include breakpoint('<=small') {	
+			ul{
+				columns: 1;
+				-webkit-columns: 1;
+				-moz-columns: 1;
+			}
+			img{
+				width: 360px;
+			}
+		}
+		@include breakpoint('<=xxsmall') {	
+			ul{
+				columns: 1;
+				-webkit-columns: 1;
+				-moz-columns: 1;
+			}
+			img{
+				width: 320px;
+			}
+		}
+	}
+	#bus{
+
+		@include breakpoint('<=xxlarge') {	
+			flex-direction: row;		
+			align-items: center;
 			justify-content: center;
+			header{
+				width: 300px;
+			}
+			.busbox{
+				width: 648px;
+				margin-right: 1.5em;
+			}
 		}
-		img {
+		@include breakpoint('<=small') {	
+			flex-direction: column;		
+			align-items: center;
+			justify-content: center;			
+			.busbox{
+				width: 90%;
+				margin-right: 0;
+			}
+		}
+	}
+	#busMap{
+		img.bus-map{
 			width: 100%;
-			max-width: _size(cmax-width);
+			max-width: 729px;
 		}
-		table{
-			font-size: 1.1em;
-			width: auto;
-			.arrowImg{
-				width: 20px;
-			}
-			tr{
-				th:first-child{
-					padding-right: .75em;
-				}
-				th:last-child{
-					padding-left: .75em;
-				}
-			}
-		} 
-		ul li{
-			max-width: _size(cmax-width);
-			margin-bottom: 1em;
-		}
-		@include breakpoint('<=small') {
-			padding: 2em 0;
-			table{
-				font-size: 1em;
-			}
-			img {
-				max-width: -webkit-fill-available;
-			}
+		img.bus-time{
+			width: 100%;
+			max-width: 598px;
 		}
 	}
 
@@ -264,7 +325,20 @@
 			width: auto;
 			max-width: 60px;
 		}
-		
+		button.add-share{
+			background-color: transparent;
+			border: 0;
+			color: #fff;
+			cursor: pointer;
+			display: inline-block;
+			height: 2.5em;
+			line-height: 2.5em;
+			outline: 0;
+			padding: 0;
+			position: relative;
+			text-align: center;
+			text-decoration: none;
+		}
 		@include breakpoint('<=small') {
 			img{
 				width: auto;

@@ -12,7 +12,8 @@
 			large:   [ '1001px',  '1280px' ],
 			medium:  [ '737px',   '1000px' ],
 			small:   [ '481px',   '736px'  ],
-			xsmall:  [ null,      '480px'  ]
+			xsmall:  [ '321px',   '480px'  ],
+			xxsmall:  [ null,     '320px'  ]
 		});
 
 	// Play initial animations on page load.
@@ -121,15 +122,6 @@
 						});
 
 				// Generic sections.
-					$('.main.style1')
-						.scrollex({
-							mode:		'middle',
-							delay:		100,
-							initialize:	function() { $(this).addClass('inactive'); },
-							terminate:	function() { $(this).removeClass('inactive'); },
-							enter:		function() { $(this).removeClass('inactive'); },
-							leave:		function() { $(this).addClass('inactive'); }
-						});
 
 					$('.main.styleUs.bg-ff')
 						.scrollex({
@@ -162,8 +154,6 @@
 						.unscrollex();
 
 				// Generic sections.
-					$('.main.style1')
-						.unscrollex();
 
 					$('.main.styleUs.bg-ff')
 						.unscrollex();
