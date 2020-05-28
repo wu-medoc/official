@@ -125,6 +125,7 @@
 /* Intro */
 
 	#intro {
+		min-height: 65%;
 		.topIcon{
 			width: 295px * 1.5;
 		}
@@ -135,6 +136,7 @@
 			color: _palette(font-color);
 			margin-bottom: .25em;			
 			font-weight: 600;
+			white-space: nowrap;
 		}
 		p{
 			margin-bottom: 0;
@@ -152,7 +154,7 @@
 				height: 3px;
 				margin: 0 auto;
 				margin-top: 0.5em;
-				width: 7em;
+				width: 10em;
 				border-radius: 15%;
 				top: -1em;
 			}
@@ -166,6 +168,7 @@
 			}
 		}
 		@include breakpoint('<=small') {
+			min-height: 100%;
 			.topIcon{
 				width: 295px;
 			}
