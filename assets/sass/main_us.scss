@@ -180,6 +180,10 @@
 		.fbox{
 			flex-direction: row;
 		}
+		.sTxt2-1{
+			position: relative;
+			transform: translate(40%, 40%);
+		}
 		.sBox2-3{
 			position: relative;
 			width: 100%;
@@ -216,7 +220,6 @@
 		// 		-moz-columns: 3;
 		// 	}
 		.row {
-			width: 80%;
 			margin: 0 auto;
 			> div{
 				padding-top: 1em;
@@ -265,6 +268,10 @@
 		}
 		.mTxt{
 			width: 120px * 1.2;
+		}
+		.qrcode{
+			width: 128px * 1.2;
+			margin-top: 0.5em;
 			margin-bottom: 1em;
 		}
 	}
@@ -443,7 +450,9 @@
 			}
 			.mTxt{
 				width: 120px;
-				margin-bottom: 1em;
+			}
+			.qrcode{
+				width: 128px;
 			}
 		}
 		.titlebox{

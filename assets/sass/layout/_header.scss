@@ -10,6 +10,9 @@
 		box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.1);
 		margin-bottom: 0;
 		height: 3em;
+		a:hover{
+			color: _palette(accent2,bg);
+		}
 		nav {
 			position: absolute;
 			right: 0.5em;
