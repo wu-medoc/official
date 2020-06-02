@@ -127,21 +127,21 @@
 	#intro {
 		min-height: 65%;
 		.topIcon{
-			overflow: hidden;
 			width: 295px * 1.5;
-			animation-name: scalebig;
-			animation-duration: 3s;
-			animation-timing-function: ease-in-out;
-			animation-iteration-count: infinite;
-			@keyframes scalebig {
-				0%   	{transform: translateY(0);}
-				25%	 	{transform: translateY(-8px);}
-				50%		{transform: translateY(0);}
-				65%		{transform: translateX(0);opacity: 1;}
-				75%		{transform: translateX(-500px);opacity: 0;}
-				85%		{transform: translateX(1000px);opacity: 0;}
-				100%	{transform: translateX(0px);opacity: 1;}
-			}
+			// overflow: hidden;
+			// animation-name: scalebig;
+			// animation-duration: 3s;
+			// animation-timing-function: ease-in-out;
+			// animation-iteration-count: infinite;
+			// @keyframes scalebig {
+			// 	0%   	{transform: translateY(0);}
+			// 	25%	 	{transform: translateY(-8px);}
+			// 	50%		{transform: translateY(0);}
+			// 	65%		{transform: translateX(0);opacity: 1;}
+			// 	75%		{transform: translateX(-500px);opacity: 0;}
+			// 	85%		{transform: translateX(1000px);opacity: 0;}
+			// 	100%	{transform: translateX(0px);opacity: 1;}
+			// }
 		}
 		
 		h2 {
