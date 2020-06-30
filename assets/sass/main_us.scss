@@ -449,16 +449,17 @@
 			}	
 		}
 		#mobiiDownload{
-			padding: 8em 0;
-			.mApp{
-				width: 60px;
-			}
-			.mTxt{
-				width: 120px;
-			}
-			.qrcode{
-				width: 128px;
-			}
+			display: none;
+			// padding: 8em 0;
+			// .mApp{
+			// 	width: 60px;
+			// }
+			// .mTxt{
+			// 	width: 120px;
+			// }
+			// .qrcode{
+			// 	width: 128px;
+			// }
 		}
 		.titlebox{
 			img.appf2, img.appf4 {
