@@ -1,0 +1,72 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap'");
+@import url('fontawesome-all.min.css');
+
+// Breakpoints.
+
+	@include breakpoints((
+		xxlarge: ( 1681px,  1920px ), 
+		xlarge:  ( 1281px,  1680px ),
+		large:   ( 1001px,  1280px ),
+		medium:  ( 737px,   1000px ),
+		small:   ( 481px,   736px  ),
+		xsmall:  ( 321px,    480px  ),
+		xxsmall:  ( null,    320px  )
+	));
+
+// Base.
+
+	@import 'base/reset';
+	@import 'base/page';
+	@import 'base/typography';
+
+// Component.
+
+	@import 'components/box';
+	@import 'components/button';
+	@import 'components/form';
+	@import 'components/icon';
+	@import 'components/image';
+	@import 'components/list';
+	@import 'components/actions';
+	@import 'components/icons';
+	@import 'components/section';
+	@import 'components/table';
+	@import 'components/poptrox-popup';
+	@import 'components/gallery';
+
+// Layout.
+
+	@import 'layout/header';
+	@import 'layout/mainUs';
+	@import 'layout/footer';
+
+
+/* Section */
+
+
+	@include breakpoint('<=xxlarge') {
+	}
+	
+	@include breakpoint('<=xlarge') {
+	}
+
+	@include breakpoint('<=large') {
+	}
+
+	@include breakpoint('<=medium') {
+	}
+	
+	@include breakpoint('<=small') {	
+	}
+	
+	@include breakpoint('<=xsmall') {
+	}
+
+	@include breakpoint('<=xxsmall') {	
+	}
+

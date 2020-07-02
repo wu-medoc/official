@@ -1,0 +1,45 @@
+/** text set
+ * title h2 : 2rem
+ * substitle h3 : 1.75rem
+ * icon h4 : 1.5rem
+ * p : 1rem
+ */
+
+/* Header */
+body {
+	padding-top: 3em;
+
+	@include breakpoint('<=small') {
+		padding-top: 2.5em;
+	}
+}
+/* Main */
+
+	.main {
+
+		&.fullscreen {
+			min-height: 100%;
+		}
+		
+		body.is-touch & {
+			background-attachment: scroll !important;
+		}
+
+		@include breakpoint('<=xxlarge') {
+		}
+
+		@include breakpoint('<=large') {
+		}
+
+		@include breakpoint('<=medium') {
+		}
+
+		@include breakpoint('<=small') {
+		}
+
+		@include breakpoint('<=xsmall') {
+        }
+        
+		@include breakpoint('<=xxsmall') {
+		}
+	}
