@@ -39,7 +39,19 @@
 				background-color: darken(_palette(top-bg), 5);
 			}
 		}
-
+		&.dkbuleBtn{		
+			color: #ffffff;	
+			background-color: _palette(colorset, dkblue);
+			text-decoration: none;
+			&:hover {
+				color: #ffffff;
+				background-color: lighten(_palette(top-bg), 5);
+			}	
+			&:active {
+				color: #ffffff;
+				background-color: darken(_palette(top-bg), 5);
+			}
+		}		
 		&.down {
 			width: 5em;
 			height: 5em;

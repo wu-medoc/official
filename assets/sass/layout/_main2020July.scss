@@ -1,29 +1,109 @@
-/** text set
- * title h2 : 2rem
- * substitle h3 : 1.75rem
- * icon h4 : 1.5rem
- * p : 1rem
- */
-
 /* Header */
-body {
-	padding-top: 3em;
 
-	@include breakpoint('<=small') {
-		padding-top: 2.5em;
+header {
+	position: fixed;
+	z-index: 10000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background: _palette(bg-o);
+	box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.1);
+	margin-bottom: 0;
+    height: 3em;
+    #headerTop{
+        padding: .5em 1em;
+        img{
+            width: auto;
+            max-height: 2em;
+        }
+	}
+	.headerbtn-top{
+		display: none;
+		position: absolute;
+		top: 0.5em ;
+		right: 1em ;
+		font-size: large;
+		padding: 0 1.5em;
+		height: 2em;
+    	line-height: 2em;
 	}
 }
+body {
+	padding-top: 3em;
+}
+
+@include breakpoint('<=small') {
+    header{
+        height: 2.5em;        
+        #headerTop{
+            img{
+                width: auto;
+                max-height: 1.5em;
+            }
+		}
+		.headerbtn-top{
+			display: none;
+			position: absolute;
+			top: 0.5em ;
+			right: 0.75em ;
+			font-size: small;
+			padding: 0 1.5em;
+			height: 2.3em;
+			line-height: 2.3em;
+		}
+    }
+    body{
+        padding-top: 2.5em;
+    }
+}
+
+
 /* Main */
-
+	h2{
+		font-size: 1.8em;
+		line-height: 1em;
+		letter-spacing: -0.05em;
+	}
 	.main {
-
+		@include vendor('display', 'flex');
+		position: relative;
+		margin: 0;
+		overflow-x: hidden;
+		h3, h4{
+			font-weight: 400;
+		}
+		&.styleIntro {
+			@include padding(12em, 0);
+			@include vendor('background-image', 'url("../../Sellercenter/Seminar/Hero-banner1.png")');
+			background-attachment: fixed;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			text-align: center;
+		}	
+		&.styleS1{
+			@include vendor('align-items', 'center');
+			@include vendor('justify-content', 'center');
+			overflow: hidden;
+			text-align: center;
+			padding: 4em 0 2em 0;
+			flex-direction: column;	
+			&.bg-yellow{
+				background: _palette(colorset,bg-yl);
+			}
+			h2,h3{
+				color: #182B56;
+			}		
+			h4{
+				color: #204A69;
+			}
+		}	
 		&.fullscreen {
 			min-height: 100%;
 		}
-		
 		body.is-touch & {
 			background-attachment: scroll !important;
-		}
+		}		
 
 		@include breakpoint('<=xxlarge') {
 		}
@@ -35,6 +115,15 @@ body {
 		}
 
 		@include breakpoint('<=small') {
+			&.styleIntro {
+				@include padding(12em, 0);
+				@include vendor('background-image', 'url("../../Sellercenter/Seminar/Hero-banner2.png")');
+				background-attachment: fixed;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				text-align: center;
+			}		
 		}
 
 		@include breakpoint('<=xsmall') {
@@ -42,4 +131,30 @@ body {
         
 		@include breakpoint('<=xxsmall') {
 		}
+	}
+
+/* Footer */
+	#footer{
+		@include vendor('align-items', 'center');
+		@include vendor('justify-content', 'center');
+		overflow: hidden;
+		text-align: center;
+		padding: 2em 0 1em 0;
+		background: #5D95BB;
+		color: #fff;
+		font-weight: 400;
+		.footerBox{		
+			a{
+				font-weight: 400;
+				padding: 0 .5em;
+				color: #fff;
+				text-decoration: underline;
+				&:hover{
+					color: _palette(colorset,bg-yl);
+				}
+			}
+		}
+		@include breakpoint('<=small') {
+			font-size: 90%;
+        }
 	}

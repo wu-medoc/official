@@ -41,11 +41,102 @@
 
 // Layout.
 	@import 'layout/main2020July';
-	@import 'layout/footer';
-
 
 /* Section */
 
+	.introBox{
+		text-align: left;
+		width: 100vw;
+		top: 60%;
+		transform: translate(50%, 10%);
+		.introTitle{
+			padding: 1em;
+			color: #fff;
+			width: 47%;
+			&::before{
+				position: absolute;
+				display: inline-block;
+				content: "";
+				border-left: .3rem solid #FADF34;
+				height: 6rem;
+				margin: 0;
+				transform: translate(-1.5rem, 5%);
+			}
+		}
+	}
+	
+	img{
+		width: 100%;
+	}
+	.row{
+		padding-top: 2em;
+		padding-bottom: 1em;
+	}
+	#st1, #st3{
+		.row{
+			div{
+				padding-bottom: 1em;
+			}
+		}
+		img{
+			width: 100%;
+			max-width: 100px;
+		}
+	}
+	#st2{
+		.row{
+			div{
+				padding-right: 0;
+				padding-left: 0;
+			}
+		}
+	}	
+	#st3{
+		h4{
+			font-weight: 600;
+		}
+		p{
+			color: #888;
+		}
+	}
+	#st5{
+		.row{
+			div{
+				padding-right: 1px;
+				padding-left: 1px;
+				.app-s2-title{
+					width: calc(100% - 2px);
+					height: 4em;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translate(-50%, -0.5em);
+					background: rgba(24, 43, 86, 0.5);
+					h4{
+						color: #fff;
+						line-height: 4em;
+					}
+				}
+				.app-s2-4{
+					padding-top: 1em;
+					max-width: 384px;
+				}
+			}
+		}
+	}
+	#st6{
+		#logos{
+			padding-top: 2em;
+			display: flex;
+			justify-content: end;
+			align-items: center;
+			flex-wrap: wrap;
+			.logoBox{
+				flex: 0 0 13%;
+				margin: 0 .25em;
+			}
+		}
+	}
 
 	@include breakpoint('<=xxlarge') {
 	}
@@ -57,12 +148,86 @@
 	}
 
 	@include breakpoint('<=medium') {
+		.introBox{
+			top: 65%;
+			.introTitle{
+				width: 40%;
+			}
+		}
+		#st5{
+			.row{
+				div{
+					.app-s2-title{
+						transform: translate(-50%, -0.4em);
+					}					
+					.app-s2-4{
+						max-width: calc(229px * 1.3);
+					}
+				}
+			}
+		}
+		#st6{
+			#logos{
+				.logoBox{
+					flex: 0 0 18%;
+				}
+			}
+		}
 	}
 	
-	@include breakpoint('<=small') {	
+	@include breakpoint('<=small') {
+		#st1, #st3{
+			img{
+				width: auto;
+				max-width: calc(100px / 2);
+			}
+		}
+		#st5{
+			.row{
+				div{
+					.app-s2-title{
+						transform: translate(-50%, -0.3em);
+					}					
+					.app-s2-4{
+						max-width: 229px;
+					}
+				}
+			}
+		}
 	}
 	
-	@include breakpoint('<=xsmall') {
+	@include breakpoint('<=xsmall') {	
+		.introBox{
+			text-align: left;
+			width: 95vw;
+			top: 50%;
+			transform: translate(5%, 35%);
+			.introTitle{
+				width: 95%;
+			}
+			.headerbtn{
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+		#st3{
+			.row div{
+				padding-left: 2px;
+				padding-right: 2px;
+				p{
+					font-size: small;
+					white-space: nowrap;
+				}
+			}
+		}
+		#st6{
+			#logos{
+				.logoBox{
+					flex: 0 0 17%;
+				}
+			}
+		}
 	}
 
 	@include breakpoint('<=xxsmall') {	
