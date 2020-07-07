@@ -137,6 +137,17 @@
 			}
 		}
 	}
+	#st7{
+		iframe#qa{
+			background-color: rgb(247, 248, 248);
+			width: 100%;
+			height: 1600px;
+			border:#fff 0px solid;
+			overflow: hidden;
+			padding: 1em 0;
+			margin: 1em;
+		}
+	}
 
 	@include breakpoint('<=xxlarge') {
 	}
@@ -192,6 +203,13 @@
 						max-width: 229px;
 					}
 				}
+			}
+		}
+		#st7{
+			iframe#qa{
+				background-color: #fff;
+				height: 1930px;
+				overflow: hidden;
 			}
 		}
 	}
