@@ -132,6 +132,10 @@ body {
 			&.bg-li {
 				background: _palette(us, bg-li);
 			}
+			&.bg-md {
+				color: #ffffff;
+				background: _palette(us, bg-md);
+			}
 			&.bg-gr {
 				color: #ffffff;
 				background: _palette(us, bg-gr);
