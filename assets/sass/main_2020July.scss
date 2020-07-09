@@ -81,6 +81,9 @@
 		img{
 			width: 100%;
 			max-width: 100px;
+			&.bigLogo{
+				max-width: 317px;
+			}
 		}
 	}
 	#st2{
@@ -191,6 +194,9 @@
 			img{
 				width: auto;
 				max-width: calc(100px / 2);
+				&.bigLogo{
+					max-width: 240px;
+				}
 			}
 		}
 		#st5{
