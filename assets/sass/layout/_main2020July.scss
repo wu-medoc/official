@@ -74,7 +74,7 @@ body {
 		}
 		&.styleIntro {
 			@include padding(12em, 0);
-			@include vendor('background-image', 'url("../../Sellercenter/Seminar/Hero-banner1.png")');
+			@include vendor('background-image', 'url("../../Seller/Hero-banner1.png")');
 			background-attachment: fixed;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -117,7 +117,7 @@ body {
 		@include breakpoint('<=small') {
 			&.styleIntro {
 				@include padding(12em, 0);
-				@include vendor('background-image', 'url("../../Sellercenter/Seminar/Hero-banner2.png")');
+				@include vendor('background-image', 'url("../../Seller/Hero-banner2.png")');
 				background-attachment: fixed;
 				background-position: center center;
 				background-repeat: no-repeat;
