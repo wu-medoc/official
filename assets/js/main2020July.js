@@ -80,9 +80,13 @@
 		
 	// 	scroll button
 		$(document).on( 'scroll', function(){        
-			($(window).scrollTop() > 400) ?
-				$('.headerbtn-top').addClass('d-block'):
-				$('.headerbtn-top').removeClass('d-block');
+			if($(window).scrollTop() > 400){
+				$('.headerbtn-top').addClass('d-block');
+				$('.zeroRed').addClass('d-block');
+			}else{
+				$('.headerbtn-top').removeClass('d-block');				
+				$('.zeroRed').removeClass('d-block');
+			}				
 		});
 
 		$('.headerbtn').scrolly();

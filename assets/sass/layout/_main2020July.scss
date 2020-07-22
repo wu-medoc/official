@@ -27,6 +27,10 @@ header {
 		height: 2em;
     	line-height: 2em;
 	}
+	.zeroRed{
+		display: none;
+		padding: .25em 0.5em 0 0.5em;
+	}
 }
 body {
 	padding-top: 3em;
@@ -56,7 +60,31 @@ body {
         padding-top: 2.5em;
     }
 }
-
+@include breakpoint('<=xxsmall') {
+    header{
+        height: 2.5em;        
+        #headerTop{
+            img{
+				margin-top: .2em;
+                width: auto;
+                max-height: 1.25em;
+            }
+		}
+		.headerbtn-top{
+			display: none;
+			position: absolute;
+			top: 0.5em ;
+			right: 0.75em ;
+			font-size: small;
+			padding: 0 0.75em;
+			height: 2.3em;
+			line-height: 2.3em;
+		}
+    }
+    body{
+        padding-top: 2.5em;
+    }
+}
 
 /* Main */
 	h2{

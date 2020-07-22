@@ -58,10 +58,14 @@
 				display: inline-block;
 				content: "";
 				border-left: .3rem solid #FADF34;
-				height: 6rem;
+				height: 70%;
 				margin: 0;
-				transform: translate(-1.5rem, 5%);
+				transform: translate(-1.5rem, 1%);
 			}
+		}
+		img.zero{
+			width: 190px * 1.5;
+			padding-top: .5em;
 		}
 	}
 	
@@ -164,8 +168,8 @@
 	@include breakpoint('<=medium') {
 		.introBox{
 			top: 65%;
-			.introTitle{
-				width: 40%;
+			img.zero{
+				width: 190px * 1.2;
 			}
 		}
 		#st5{
@@ -225,14 +229,26 @@
 			text-align: left;
 			width: 95vw;
 			top: 50%;
-			transform: translate(5%, 35%);
+			transform: translate(5%, 20%);
 			.introTitle{
 				width: 95%;
+				&::before{
+					position: absolute;
+					display: inline-block;
+					content: "";
+					border-left: .3rem solid #FADF34;
+					height: 12rem;
+					margin: 0;
+					transform: translate(-1.5rem, 1%);
+				}
 			}
 			.headerbtn{
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
+			}
+			img.zero{
+				width: 190px;
 			}
 		}
 		#st3{
