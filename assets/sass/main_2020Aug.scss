@@ -162,11 +162,11 @@ h2{
 			}
 		}	
 		&.styleS1{
+			@include padding(3em, 0);
 			@include vendor('align-items', 'center');
 			@include vendor('justify-content', 'center');
 			overflow: hidden;
 			text-align: center;
-			padding: 4em 0 2em 0;
 			flex-direction: column;	
 			color: #fff;
 			white-space: nowrap;
