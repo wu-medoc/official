@@ -123,7 +123,7 @@ h2{
 				transform: translate(100%,-70%);
 				width: 128px;
 				animation-name:anim02;
-				animation-duration:3s;
+				animation-duration:1s;
 			}
 			.introPhoto2{
 				position: absolute;
@@ -132,7 +132,7 @@ h2{
 				transform: translate(180%,-70%);
 				width: 128px;
 				animation-name:anim02;
-				animation-duration:2s;
+				animation-duration:0.5s;
 			}
 			.introImg01{
 				position: absolute;
@@ -141,7 +141,7 @@ h2{
 				transform: translate(150%,-128%);
 				width: 175px;
 				animation-name:anim02;
-				animation-duration:4s;
+				animation-duration:2s;
 			}
 			
 			@keyframes anim01{
