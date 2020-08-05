@@ -315,6 +315,15 @@ h2{
 			right: 0;
 			margin: 2em 1em;
 		}
+		iframe{
+			height: 650px;
+			@include breakpoint('<=xsmall') {
+				height: 580px;
+			}
+			@include breakpoint('<=xxsmall') {
+				height: 480px;
+			}
+		}
 		ul{
 			list-style-image:url('../../images/dot.png');
 			padding: 2em 1em 1em 1em;
@@ -328,4 +337,8 @@ h2{
 				width: 300px;
 			}
         }
+	}
+	.modal-header button:hover{
+		background: transparent;
+		outline: none;
 	}
