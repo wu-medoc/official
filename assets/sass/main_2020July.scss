@@ -150,7 +150,8 @@
 			width: 100%;
 			height: 1600px;
 			border:#fff 0px solid;
-			overflow: hidden;
+			overflow-x: hidden;
+			overflow-y: auto;
 			padding: 1em 0;
 			margin: 1em;
 		}
@@ -219,7 +220,8 @@
 			iframe#qa{
 				background-color: #fff;
 				height: 1930px;
-				overflow: hidden;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 		}
 	}
