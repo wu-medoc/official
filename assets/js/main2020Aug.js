@@ -71,16 +71,44 @@
 
 		}
 
-		
-	// 	scroll button
-	$(document).on( 'scroll', function(){        
-		($(window).scrollTop() > 400) ?
-		$('.jastka').removeClass('d-none') :
-		$('.jastka').addClass('d-none') ;
-	});
 
-		//$('.headerbtn').scrolly();
 
 		$('.scrollme').attr('data-when','enter').attr('data-from','1').attr('data-to','0').attr('data-opacity','0.5').attr('data-translatey','100');
+		$('.navbar-toggler').on('click', function(){
+			$('.navicon').attr('src', function(index, attr){
+				return attr == "../images/ic_close.png" ? "../images/ic_menu.png" : "../images/ic_close.png";
+			});
+		});
+		$('#navbarNav li').on('click', function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+
+		//qrcode
+		var qrcode = new QRCode(document.getElementById("qrcode"), {
+			text: "https://mobii.ai/AppDownload",
+			width: 100,
+			height: 100,
+			colorDark : "#000000",
+			colorLight : "#ffffff",
+			correctLevel : QRCode.CorrectLevel.H
+		});
+
+		//app notify
+		$('.appclose').on('click',function(){
+			$('section.appNotifyBox').addClass("d-none");
+			$('.jastka').addClass("mb-2");
+		});		
 		
+		// 	scroll button
+		$(document).on( 'scroll', function(){        
+			($(window).scrollTop() > 400) ?
+			$('.jastka').show() :
+			$('.jastka').hide() ;
+		});
+
+		$('.linkHash').on('click', function(){
+			var thisHash =$(this).attr('href');
+			console.log(thisHash);
+			$("html, body").animate({scrollTop: $(thisHash).offset().top},1500);
+		});
 })(jQuery);

@@ -10,12 +10,12 @@
 
 	@include breakpoints((
 		xxlarge: ( 1681px,  1920px ), 
-		xlarge:  ( 1281px,  1680px ),
-		large:   ( 1001px,  1280px ),
-		medium:  ( 737px,   1000px ),
-		small:   ( 481px,   736px  ),
-		xsmall:  ( 321px,    480px  ),
-		xxsmall:  ( null,    320px  )
+		xlarge:  ( 1200px,  1680px ),
+		large:   ( 992px,  1199px ),
+		medium:  ( 768px,   991px ),
+		small:   ( 576px,   767px  ),
+		xsmall:  ( 321px,    575px  ),
+		xxsmall:  ( 0,    320px  )
 	));
 
 // Base.
@@ -53,13 +53,124 @@ h2{
 }
 
 /* Header */
+header{
+	@include vendor('background', 'linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%)');
+	.headerBg{
+		@include vendor('background-image', 'url("../../event/img0818/introImg02.png")');
+		background-attachment: local;
+		background-position: center 100px;
+		background-size: 68%;
+		background-repeat: no-repeat;
+		text-align: center;
+	}
+	.navbar-light{
+		.navbar-toggler{
+			color: rgba(255, 255, 255, 1);
+			border-color: rgba(255, 255, 255, 0);
+		}
+	}
+	button{		
+		z-index: 3;
+		&:hover {
+			background-color: transparent;
+		}
+	}
+	.btn.focus, .btn:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+	.navicon{
+		width: 24px;
+		height: 24px;
+	}	
+	#navbarNav{
+		justify-content: flex-end;
+		ul{
+			width: fit-content;
+		}	
+		a.nav-link{
+			color: #fff;
+		}
+	}	
+	nav{
+		background: rgba(0, 133, 242, 0.8);
+		margin-bottom: 1em;
+		height: 62px;
+	}
+}
+@include breakpoint('<=xlarge') {
+	header{
+		.headerBg{
+			background-position: center 25%;
+		}
+	}
+}
+@include breakpoint('<=large') {
+	header{
+		.headerBg{
+			background-position: center 30%;
+		}
+	}
+}
+@include breakpoint('<=small') {
+	header{
+		.headerBg{
+			background-position: center 20%;
+			background-size: 100%;
+		}
+	}
+}
+@include breakpoint('<=xsmall') {
+	header{
+		.headerBg{
+			background-position: center 18%;
+			background-size: 110%;
+		}
+		nav{
+			background: transparent;
+		}
+		#navbarNav{
+			position: absolute;
+			background: #003286;
+			color: #fff;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			z-index: 2;
+			ul{
+				width: 100%;
+				text-align: center;
+				align-items: center;
+				transform: translateY(65%);
+				li{
+					width: 100%;
+					padding: .5em 0;
+					&.active{
+					background: #0085F2;
+					}
+				}
+			}
+			.navApp{
+				display: none;
+			}
+		}	
+	}	
+}
+@include breakpoint('<=xxsmall') {
+	header{
+		.headerBg{
+			background-position: center 22%;
+			background-size: 120%;
+		}
+	}
+}
+/* Header TOP */
 #headerTop{
-	padding-top: 2em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	@include vendor('background', 'linear-gradient(180deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0) 100%)');
 	.mobiiLogo{
 		margin: 0.5em;
 		width: 115px;
@@ -76,6 +187,21 @@ h2{
 	@include breakpoint('<=medium') {
 		.mobiiLogo{
 			margin: 0.5em;
+			width: calc(115px *0.9);
+		}
+		.AugLogo{
+			margin: 0.5em;
+			width: calc(200px *0.7);
+		}
+		.AugLable{
+			margin: 0.5em;
+			width: auto;
+			height: calc(30px *0.7);
+		}
+	}	
+	@include breakpoint('<=xsmall') {
+		.mobiiLogo{
+			margin: 0.5em;
 			width: calc(115px *0.7);
 		}
 		.AugLogo{
@@ -85,235 +211,521 @@ h2{
 		.AugLable{
 			margin: 0.5em;
 			width: auto;
-			height: calc(30px *0.6);
+			height: calc(30px *0.55);
 		}
 	}
 }
 
+/* airplane */
+.airplane{
+	position: absolute;
+	top: 9%;
+	left: 50%;
+	transform: translate(-280px,0%);
+	width: 160px;
+	animation-name:anim01;
+	animation-duration:1s;
+}
+@keyframes anim01{
+	from{
+		left:-50%;
+	}
+	to{
+		left: 50%;
+	}
+}
+@include breakpoint('<=medium') {	
+	.airplane{
+		top: 7.5%;
+		transform: translate(-250px,0%);
+		width: 160px *.9;
+	}
+}
+@include breakpoint('<=xsmall') {
+	.airplane{
+		top: 5%;
+		transform: translate(-194px,0%);
+		width: 160px *.8;
+	}
+}
+/* QRcode */
+.appQR {
+    display: none;
+    position: absolute;
+    width: 140px;
+    height: 148px;
+    top: 62px;
+    transform: translateX(-42%);
+    background: #fff;
+    box-shadow: 0 1px 2px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+	vertical-align: middle;
+	text-align: -webkit-center;
+	color: #333;
+	font-weight: 500;
+	font-size: .9em;
+	img{
+		margin-top: .75em;
+	}
+}
+.dwloadApp{
+	&:hover{
+	  .appQR{
+		display: block;
+		p{
+			margin: 0;
+		}
+	  }
+	}
+  }  
+/* cloud */
+  #intro{
+	margin: 3em 0em;
+	padding: 0 0 11em 0;
+	.cloud{
+		position: absolute;
+		height: fit-content;
+		width: 100%;
+		left: 0;
+		transform: translateY(-35px);
+	}
+	.hotball{
+		position: absolute;
+		width: 103px * 1.5;
+		transform: translate(0, -50%) rotate(0deg);
+		left: 75%;
+		top: 222px * 1.4;
+		animation-name:animball;
+		animation-duration:2s;    
+		animation-timing-function: ease;
+		animation-iteration-count: infinite;
+	}
+	@keyframes animball{
+		0%{
+			padding-top: 0;
+		}
+		25%{
+			padding-top: 0.5em;
+			transform: translate(0, -50%) rotate(3deg);
+		}
+		50%{
+			padding-top: 1em;
+		}
+		75%{
+			padding-top: 0.5em;
+		}
+		100%{
+			padding-top: 0;
+			transform: translate(0, -50%) rotate(-2deg);
+		}
+	}
+	.container{
+		position: relative;
+		transform: translateY(35px);
+		img{
+			width: inherit;
+			max-width: 230px;
+			padding: 1em .75em;
+			&.gift4{
+				width: 195px ;
+				padding-top: 7em;
+				padding-bottom: 0;
+			}
+		}	  
+	}
+  }
+  @include breakpoint('<=xlarge') {	  
+	#intro{
+		@include padding(9em, 0);
+		@include vendor('background-image', 'url("../../event/img0818/cloud.png")');
+		background-attachment: local;
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		text-align: center;
+		.cloud{
+			display: none;
+		} 		
+		.hotball{
+			width: 103px * 1.4;
+			transform: translate(0, -50%);
+			left: 80%;
+		}
+		.container{
+			position: relative;
+			transform: translateY(-15%);
+			img.gift4{
+				width: 195px;
+			}	  
+		}
+	}
+  }
+  @include breakpoint('<=large') {
+	#intro{
+		@include padding(8em, 0);
+		.cloud{
+			display: none;
+		} 	
+		.hotball{
+			width: 103px * 1.25;
+			transform: translate(0, -50%);
+			top: 222px * 1.5;
+		}
+		.container{
+			position: relative;
+			transform: translateY(-15%);
+			img.gift4{
+				width: 195px * 0.9;
+			}	  
+		}
+	}
+  }  
+  @include breakpoint('<=medium') {	 
+	#intro{
+		@include padding(6.5em, 0);
+		.cloud{
+			display: none;
+		} 		
+		.hotball{
+			width: 103px * 1.2;
+		}
+		.container{
+			position: relative;
+			transform: translateY(-15%);
+			img{
+				padding: .75em .25em;
+				&.gift4{
+					width: 195px * 0.85;
+				}	 
+			} 
+		}
+	}
+  }
+  @include breakpoint('<=small') {	 
+	#intro{
+		@include padding(4em, 0);
+		.cloud{
+			display: none;
+		} 	
+		.hotball{
+			width: 103px ;
+			transform: translate(0, -50%);
+			left: 70%;
+			top: 222px * 1.3;
+		}
+		.container{
+			position: relative;
+			transform: translateY(-1%);
+			img{
+				padding: 1em .5em;
+				&.gift4{
+					width: 195px * 0.8;
+				}	 
+			} 
+		}
+	}
+  }
+  @include breakpoint('<=xxsmall') {	 
+	#intro{
+		@include padding(3em, 0);
+		min-width: 320px;
+		.cloud{
+			display: none;
+		} 	
+		.hotball{
+			width: 103px * 0.85 ;
+			transform: translate(0, 0%);
+			top: 222px;
+		}
+		.container{
+			position: relative;
+			transform: translateY(-7%);
+			img{
+				padding: 1em .5em;
+				&.gift4{
+					width: 195px * 0.7;
+				}	 
+			} 
+		}
+	}
+  }
 /* Main */
 	.main {
-		@include vendor('display', 'flex');
-		position: relative;
-		margin: 0;
-		overflow-x: hidden;
-		h3, h4{
-			font-weight: 400;
+		@include padding(3em, 0);
+		@include vendor('align-items', 'center');
+		@include vendor('justify-content', 'center');
+		overflow: hidden;
+		text-align: center;
+		color: #fff;
+		.major{
+			margin-top: 2em;
+			&:after{
+				content: '';
+				display: inline-block;
+				background: #fff;
+				margin-top: 1.5em;
+				height: 4px;
+				width: 7em;
+				border-radius: 15%;
+				position: relative;
+				top: -1em;
+			}
 		}
-		&.styleIntro {
-			@include padding(10em, 0);
-			@include vendor('background-image', 'url("../../event/img0818/introImg02.png")');
-			background-attachment: local;
-			background-position: 50% 70%;
-			background-size: 488px;
-			background-repeat: no-repeat;
-			text-align: center;
-			.airplane{
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%,-120%);
-				width: 160px;
-				animation-name:anim01;
-				animation-duration:1s;
-			}
-			.introPhoto1{
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(100%,-70%);
-				width: 128px;
-				animation-name:anim02;
-				animation-duration:1s;
-			}
-			.introPhoto2{
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(180%,-70%);
-				width: 128px;
-				animation-name:anim02;
-				animation-duration:0.5s;
-			}
-			.introImg01{
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(150%,-128%);
-				width: 175px;
-				animation-name:anim02;
-				animation-duration:1.5s;
-			}
-			
-			@keyframes anim01{
-				from{
-					left:-50%;
-				}
-				to{
-					left: 50%;
-				}
-			}
-			@keyframes anim02{
-				0%{
-					opacity: 0;
-				}
-				100%{
-					opacity: 1;
-				}
-			}
+		&.bg-yellow{
+			background: _palette(colorset,bg-yl);
 		}	
-		&.styleS1{
-			@include padding(3em, 0);
-			@include vendor('align-items', 'center');
-			@include vendor('justify-content', 'center');
-			overflow: hidden;
-			text-align: center;
-			flex-direction: column;	
-			color: #fff;
-			white-space: nowrap;
-			&.bg-yellow{
-				background: _palette(colorset,bg-yl);
-			}
-			h2,h3{
-				color: #182B56;
-			}		
-			h4{
-				color: #204A69;
-			}
-		}	
-		&.bgBlock{
-			@include vendor('background-image', 'url("../../event/img0818/bgBlock1.png")');
-			background-attachment: local;
-			background-position: 50% 90%;
-			background-size: 320px;
-			background-repeat: no-repeat;
-			text-align: center;
-		}
-		&.bgBlock2{
-			@include vendor('background-image', 'url("../../event/img0818/bgBlock2.png")');
-			background-attachment: local;
-			background-position: 50% 50%;
-			background-size: 380px;
-			background-repeat: no-repeat;
-			text-align: center;
-		}
 		&.fullscreen {
 			min-height: 100%;
 		}
 		body.is-touch & {
 			background-attachment: scroll !important;
 		}		
+		&.st1{
+			padding: 2em 0;
+		}	
+		&.st2{
+			padding: 4em 0;
+			.row {
+				div{
+					p{
+						margin-bottom: 0;
+						&:last-child{
+							margin-bottom: 1.5em;
+							font-size: 85%;
+							line-height: initial;
+						}
+					}
+				}
+				img{
+					max-width: 120px;
+				}
+			}
+		}			
+		&.st3{		
+			.imgflex{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: end;
+				img{
+					-ms-flex: 0 0 12%;
+					flex: 0 0 12%;
+					max-width: 10%;
+					margin-right: .5em;
+					margin-bottom: .5em;
+				}
+			}	
+			img.limited{
+				width: 96px;
+				height: 96px;
+			}
+		}
+		&.st4{
+			.dotNumBox{
+				width: 100%;
+				text-align: -webkit-center;
+				padding: 1.5em .5em .5em .5em;
+				.dotNum{
+					background: #fff;
+					color: #003286;
+					width: 1.5em;
+					height: 1.5em;
+					line-height: initial;
+					border-radius: 100%;
+				}
+			}
+		}		
+		&.st5{
+			.container{
+				text-align: -webkit-center;
+			}
+			ul{
+				list-style: decimal;
+				color: #F44658;
+				background: #fff;
+				margin-top: 4em;
+				padding: 2em 1em 1em 2em;
+				border: 2px solid #F44658;
+				border-radius: 30px;
+				max-width: 520px;
+				label{
+					padding: 0 2em;
+					background:#F44658;
+					color: #fff;
+					border-radius: 30px;
+					position: absolute;
+					left: 50%;
+    				transform: translate(-50%,-50px);
+				}
+				li{
+					text-align: left;
+					margin: 0 1em;
+				}
+			}
+		}
 
 		@include breakpoint('<=xxlarge') {
 		}
 
-		@include breakpoint('<=large') {
+		@include breakpoint('<=large') {	
 		}
 
-		@include breakpoint('<=medium') {
-			&.styleIntro {
-				@include padding(13em, 0);
-				@include vendor('background-image', 'url("../../event/img0818/introImg02.png")');
-				background-attachment: local;
-				background-position: 45% 40%;
-				background-size: 388px;
-				background-repeat: no-repeat;
-				text-align: center;
-				overflow: hidden;
-				.airplane{
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%,-170%);
-					width: 130px;
-				}
-				.introPhoto1{
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(-85%,50%);
-					width: 108px;
-				}
-				.introPhoto2{
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(0%,42%);
-					width: 108px;
-				}
-				.introImg01{
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(24%,-30%);
-					width: 140px;
-				}
-			}	
-			&.bgBlock{
-				background-size: 280px;
-			}
-			&.bgBlock2{
-				background-size: 315px;
+		@include breakpoint('<=medium') {	
+			&.st3{		
+				.imgflex{
+					img{
+						max-width: 13%;
+					}
+				}	
 			}
 		}
 
 		@include breakpoint('<=small') {
+			&.st3{		
+				.imgflex{
+					img{
+						max-width: 18%;
+					}
+				}	
+			}
 		}
 
 		@include breakpoint('<=xsmall') {
+			&.st2 .row img {
+				max-width: 96px;
+			}
+			&.st3{		
+				.imgflex{
+					img{
+						max-width: 22%;
+					}
+				}	
+			}
         }
         
-		@include breakpoint('<=xxsmall') {
+		@include breakpoint('<=xxsmall') {	
 		}
 	}
 
-	#st1 img{
-		width: inherit;
-		max-width: 340px;
+/* image */
+.banner, .photo{
+	width: 100%;
+	max-width: 520px;
+	padding: 0 1em;
+}
+.mobiitxt{
+	width: 100%;
+	max-width: 330px;
+	padding: 0 1em;
+}
+.startBtn{
+	width: 100%;
+	max-width: 390px;
+	padding: 0 1em;
+}
+
+/* appNotifyBox */
+.appNotifyBox{
+	display: none;
+	.appNotify{
+	  color: #333;
+	  width: 100%;
+	  border-left: solid 3px;
+	  border-left-color: #f0ad4e;
+	  background: #FFF4CB;
+	  z-index: 5;
+	  position: fixed;
+	  bottom: 0;
+	  left: 50%;
+	  transform:translateX(-50%);
+	  img{
+		width: 36px;
+		height: 36px;
+		margin: .75em;
+	  }
+	  button.dwbtn{
+		border-radius: 30px;
+		background: #33DD4B;
+		color: #fff;
+		font-size: small;
+		height: fit-content;
+		align-self: center;
+	  }
+	  .appclose{
+		align-self: self-start;
+		font-size: medium;
+	  }
+	  .appNotifyBtn{
+		display: flex;
+		margin-left: auto;
+	  }
+	  p{
+		font-weight: 700;
+		margin-top: .75em;
+		margin-bottom: 0.25em;
+		font-size: small;
+	  }
+	  small{
+		color: #888888;
+		position: absolute;
+		transform: translateY(-3px);
+		font-size: x-small;
+	  }
+	  animation: MoveUpDown 0.8s ease-in;
 	}
-	#st2{
-		img{
-			width: -webkit-fill-available;
-			max-width: 480px;
-			padding: 1em;
+	@keyframes MoveUpDown {
+	  0% {
+		bottom: -60px;
+		opacity: .5;
+	  }
+	  100% {
+		bottom: 0;
+		opacity: 1;
+	  }
+	}
+  }
+  @include breakpoint('<=small') {
+	  .appNotifyBox{
+		  display: block;
+	  }
+  }
+  
+/* jastka */
+.jastkaBox{
+	.jastka{
+		position: fixed;
+		width: 52px;
+		bottom: 0;
+		right: 0;
+		margin-right: 1em;
+		margin-bottom: 2em;
+		@include breakpoint('<=small') {
+			margin-bottom: 4em;
 		}
-		button{
-			border-radius: 16px;
-			background: #F44658;
-			color:#fff;
-			&:hover{
-				opacity: .8;
-			}
-		}
-	} 
+	}
+}
 /* Footer */
 	#footer{
 		@include vendor('align-items', 'center');
 		@include vendor('justify-content', 'center');
 		overflow: hidden;
 		text-align: center;
-		padding: 2em 0 1em 0;
+		padding: 2em 0;
 		color: #fff;
 		font-weight: 400;
 		background: transparent;
-		font-size: .95em;
 		img.footimg{
 			width: 374px;
 			padding: 2em;
 		}
 		a{
-			color: #fff;
+			color: #fff; 
 			text-decoration: underline;
 			padding: 0 .25em;
 			&:hover{
 				opacity: .8;
 			}
-		}
-		.jastka{
-			width: 52px;
-			position: fixed;
-			bottom: 0;
-			right: 0;
-			margin: 2em 1em;
 		}
 		iframe{
 			height: 650px;
@@ -324,15 +736,19 @@ h2{
 				height: 480px;
 			}
 		}
+		label{
+			text-align: left;
+			padding: 2em 0 0 1em;
+		}
 		ul{
-			list-style-image:url('../../images/dot.png');
-			padding: 2em 1em 1em 1em;
+			list-style: unset;
+			padding: 0 1em 1em 2em;
 			li{
 				text-align: left;
+				margin: 0 1em;
 			}
 		}
 		@include breakpoint('<=small') {
-			font-size: 90%;
 			img.footimg{
 				width: 300px;
 			}
