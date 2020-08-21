@@ -503,19 +503,13 @@ header{
 				}
 			}
 		}			
-		&.st3{		
-			.imgflex{
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				img{
-					-ms-flex: 0 0 auto;
-					flex: 0 0 auto;
-					width: 80px;
-					height: 80px;
-					height: inherit;
-					margin-right: .5em;
-					margin-bottom: .5em;
+		&.st3{	
+			.logos{
+				display: grid;
+				grid-template-columns: repeat(11, 1fr);
+				img {
+					padding-right: 10px;
+					padding-bottom: 10px;
 				}
 			}	
 			img.limited{
@@ -550,7 +544,7 @@ header{
 				padding: 2em 1em 1em 2em;
 				border: 2px solid #F44658;
 				border-radius: 30px;
-				max-width: 520px;
+				max-width: 530px;
 				label{
 					padding: 0 2em;
 					background:#F44658;
@@ -570,10 +564,20 @@ header{
 		@include breakpoint('<=xxlarge') {
 		}
 
-		@include breakpoint('<=large') {	
+		@include breakpoint('<=large') {
+			&.st3{	
+				.logos{
+					grid-template-columns: repeat(7, 1fr);
+				}	
+			}	
 		}
 
 		@include breakpoint('<=medium') {	
+			&.st3{	
+				.logos{
+					grid-template-columns: repeat(6, 1fr);
+				}	
+			}	
 		}
 
 		@include breakpoint('<=small') {
@@ -583,33 +587,21 @@ header{
 			&.st2 .row img {
 				max-width: 96px;
 			}
-			&.st3{		
-				.imgflex{
-					justify-content: end;
-					img{
-						width: 78px;
-						height: 78px;
-					}
+			&.st3{	
+				.logos{
+					grid-template-columns: repeat(4, 1fr);
 				}	
-			}
+			}	
         }
         
 		@include breakpoint('<=xxsmall') {	
-			&.st3{		
-				.imgflex{
-					img{
-						width: 64px;
-						height: 64px;
-					}
-				}	
-			}
 		}
 	}
 
 /* image */
 .banner, .photo{
 	width: 100%;
-	max-width: 520px;
+	max-width: 530px;
 	padding: 0 1em;
 }
 .mobiitxt{
@@ -743,7 +735,7 @@ header{
 		}
 		label{
 			text-align: left;
-			padding: 2em 0 0 1em;
+			padding: 2em 0 .5em 1em;
 		}
 		ul{
 			list-style: unset;
@@ -751,6 +743,7 @@ header{
 			li{
 				text-align: left;
 				margin: 0 1em;
+				line-height: initial;
 			}
 		}
 		@include breakpoint('<=small') {
