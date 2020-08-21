@@ -511,7 +511,7 @@ header{
 				img{
 					-ms-flex: 0 0 12%;
 					flex: 0 0 12%;
-					max-width: 10%;
+					width: 10%;
 					height: inherit;
 					margin-right: .5em;
 					margin-bottom: .5em;
@@ -576,7 +576,7 @@ header{
 			&.st3{		
 				.imgflex{
 					img{
-						max-width: 13%;
+						width: 13%;
 					}
 				}	
 			}
@@ -586,7 +586,7 @@ header{
 			&.st3{		
 				.imgflex{
 					img{
-						max-width: 18%;
+						width: 18%;
 					}
 				}	
 			}
@@ -599,7 +599,7 @@ header{
 			&.st3{		
 				.imgflex{
 					img{
-						max-width: 22%;
+						width: 22%;
 					}
 				}	
 			}
