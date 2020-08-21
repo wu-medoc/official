@@ -507,11 +507,12 @@ header{
 			.imgflex{
 				display: flex;
 				flex-wrap: wrap;
-				justify-content: end;
+				justify-content: center;
 				img{
-					-ms-flex: 0 0 12%;
-					flex: 0 0 12%;
-					width: 10%;
+					-ms-flex: 0 0 auto;
+					flex: 0 0 auto;
+					width: 80px;
+					height: 80px;
 					height: inherit;
 					margin-right: .5em;
 					margin-bottom: .5em;
@@ -573,23 +574,9 @@ header{
 		}
 
 		@include breakpoint('<=medium') {	
-			&.st3{		
-				.imgflex{
-					img{
-						width: 13%;
-					}
-				}	
-			}
 		}
 
 		@include breakpoint('<=small') {
-			&.st3{		
-				.imgflex{
-					img{
-						width: 18%;
-					}
-				}	
-			}
 		}
 
 		@include breakpoint('<=xsmall') {
@@ -598,14 +585,24 @@ header{
 			}
 			&.st3{		
 				.imgflex{
+					justify-content: end;
 					img{
-						width: 22%;
+						width: 78px;
+						height: 78px;
 					}
 				}	
 			}
         }
         
 		@include breakpoint('<=xxsmall') {	
+			&.st3{		
+				.imgflex{
+					img{
+						width: 64px;
+						height: 64px;
+					}
+				}	
+			}
 		}
 	}
 
@@ -706,6 +703,13 @@ header{
 		}
 	}
 }
+.modal-header button:hover{
+	background: transparent;
+	outline: none;
+}
+.modal iframe{
+	height: 75vh;
+}
 /* Footer */
 	#footer{
 		@include vendor('align-items', 'center');
@@ -754,8 +758,4 @@ header{
 				width: 300px;
 			}
         }
-	}
-	.modal-header button:hover{
-		background: transparent;
-		outline: none;
 	}
