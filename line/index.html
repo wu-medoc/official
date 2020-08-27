@@ -41,7 +41,7 @@
                                     '<div class="guests-chat-name">',d.name,'</div></div>',
                                     '<div class="guests-chat-msg d-inline-flex"><div class="guests-chat-timestamp">',d.datetime.split(" ")[1],'</div>',
                                 );
-                                (d.msg.substr(1,3)=='img')?html.push('<div class="direct-imgbox">',d.msg,'</div></div></div>',):html.push('<div class="direct-chat-text">',d.msg,'</div></div></div>',);
+                                (d.msg.substr(1,3)=='img')?html.push('<div class="guests-imgbox">',d.msg,'</div></div></div>',):html.push('<div class="guests-chat-text">',d.msg,'</div></div></div>',);
                             }else{
                                 html.push(
                                     '<div class="directbox"><div class="direct-chat-info"><div class="direct-chat-name">',d.name,'</div>',
