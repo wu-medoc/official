@@ -12,54 +12,67 @@
         <div class="linebox">
             <div class="chat-box">
                 <div class="popup-messages">          
-                    <div class="direct-chat-messages">
-                        <small class="timestamp-s">2020/01/11 12</small>    
-                        <!-- Message. Default to the right -->
-                        <div class="guests-chat-msg">
-                            <div class="guests-chat-text">
-                                Hi
-                            </div> 
-                        </div>                     
-                        <!-- Message. Default to the left -->
-                        <div class="direct-chat-info clearfix">
-                            <span class="direct-chat-name pull-left">Osahan</span>
-                        </div>
-                        <img alt="UserImage" src="https://picsum.photos/100/100/?random=1" class="direct-chat-img">
-                        <div class="direct-chat-msg">
-                            <div class="direct-chat-text">
-                                您好，我們會請專人到府收回退貨，再為您處理退款～
-                            </div>                 
-                            <span class="direct-chat-timestamp">3.30 PM</span>
-                        </div>           
-                        <div class="direct-chat-info clearfix">
-                            <span class="direct-chat-name pull-left">Osahan</span>
-                        </div>
-                        <img alt="UserImage" src="https://picsum.photos/100/100/?random=1" class="direct-chat-img">
-                        <div class="direct-chat-msg">            
-                            <div class="direct-chat-text">
-                                客服專線 0800-xxxxxx
-                            </div>       
-                            <span class="direct-chat-timestamp">3.36 PM</span>           
-                        </div>       
-                        <!-- Message. Default to the right -->
-                        <div class="guests-chat-msg">
-                            <div class="guests-chat-text">
-                                請幫我轉真人服務
-                            </div> 
+                    <div class="chat-messages">
+                        <div id="div381"></div>
+                        <div class="guestsbox">
+                            <img alt="UserImage" src="https://picsum.photos/100/100/?random=2" class="guests-chat-img">
+                            <div class="guests-chat-info ">
+                                <span class="guests-chat-name">Lisa</span>
+                            </div>
+                            <div class="guests-chat-msg">
+                                <div class="guests-chat-text">
+                                    訂購須知<br>
+                                    收到商品後，請儘速檢查商品，若商品發生新品瑕疵之情形，您可申請商品退貨。<br>
+                                    商品到貨享七天猶豫期之權益（非試用期），辦理退貨商品必須是全新狀態且包裝完整，否則將會影響退貨權限。<br>
+                                    訂單僅提供退貨，恕不提供換貨。<br>
+                                    個人衛生用品除商品本身有瑕疵外，未拆封商品仍享有七天猶豫期之退貨權利。<br>
+                                    若為參加任選活動而套組出售之促銷商品，不可單品退貨，需將套組商品一併退回。
+                                </div> 
+                                <span class="guests-chat-timestamp">3.10 PM</span>
+                            </div>    
+                        </div>                                         
+                        <div class="directbox">
+                            <div class="direct-chat-info ">
+                                <span class="direct-chat-name">Osahan</span>
+                            </div>
+                            <img alt="UserImage" src="https://picsum.photos/100/100/?random=1" class="direct-chat-img">
+                            <div class="direct-chat-msg">
+                                <div class="direct-chat-text">
+                                    您好，我們會請專人到府收回退貨，再為您處理退款～
+                                </div>                 
+                                <span class="direct-chat-timestamp">3.30 PM</span>
+                            </div>        
+                        </div>                        
+                        <div class="directbox">
+                            <div class="direct-chat-info ">
+                                <span class="direct-chat-name">Osahan</span>
+                            </div>
+                            <img alt="UserImage" src="https://picsum.photos/100/100/?random=1" class="direct-chat-img">
+                            <div class="direct-chat-msg">            
+                                <div class="direct-chat-text">
+                                    運送須知
+                                    產品配送區域範圍僅限台灣本島，離島/海外目前無配送。
+                                    商品之實際配貨日期、退換貨日期，依我們向您另行通知之內容為準。
+                                    偏遠地區、樓層費及其它加價費用，皆由廠商於約定配送時一併告知。
+                                    若有特別需求、指定到貨日期及收貨時段，請務必於訂單留言處告知；本公司保留調整之權利。
+                                </div>       
+                                <span class="direct-chat-timestamp">3.36 PM</span>           
+                            </div>        
+                        </div>    
+                        <div class="guestsbox">
+                            <img alt="UserImage" src="https://picsum.photos/100/100/?random=2" class="guests-chat-img">
+                            <div class="guests-chat-info ">
+                                <span class="guests-chat-name">Lisa</span>
+                            </div>
+                            <div class="guests-chat-msg">
+                                <div class="guests-chat-text">
+                                    請幫我轉真人服務
+                                </div> 
+                                <span class="guests-chat-timestamp">3.40 PM</span>
+                            </div>     
                         </div>     
                     </div>  
-                </div>               
-                <div class="service-overbox text-center d-none">
-                    <small class="timestamp-s">2020/01/11 12</small>
-                    <div class="service-over">                            
-                        此客服單已經結單
-                    </div>  
-                    <bottom class="btn index-outline-btn small-80 m-2" onclick="history.back();">回上一頁</bottom>
-                </div>
-                <div class="service-store-footer container">
-                    <input type="text" class="customer-msg" placeholder="請填寫問題內容（限填200字）">
-                    <i class="material-icons send m-2">&#xe163;</i>
-                </div>  
+                </div>   
             </div> 
 
         </div> 
@@ -70,12 +83,38 @@
 		<script src="../assets/js/breakpoints.min.js"></script>
 		<script src="../assets/js/util.js"></script>
 		<script src="../assets/js/jquery2.1.1.min.js"></script>
-        <script src="../assets/js/scrollme/jquery.scrollme.min.js"></script>
         <script> 
+            $(document).ready(function (){     
+                    /* set no cache */
+                    //$.ajaxSetup({ cache: false });
+            
+                    $.getJSON("msg.json", function(data){ 
+                        var html = [];
+            
+                        /* loop through array */
+                        $.each(data, function(index, d){            
+                            html.push("userid : ", d.userid, ", ",
+                                    "datetime : ", d.datetime, ", ", 
+                                    "name : ", d.name, ", ", 
+                                    "msg : ", d.msg, "<br>");
+                        });
+            
+            
+                        $("#div381").html(html.join('')).css("background-color", "orange");
+                    }).error(function(jqXHR, textStatus, errorThrown){ /* assign handler */
+                        /* alert(jqXHR.responseText) */
+                        alert("error occurred!");
+                    });
+            });
             $('.direct-chat-text').each(function(){
                 var x = $(this).width() + 76;   
                 var y = $(this).height() - 4;   
                 $(this).siblings('.direct-chat-timestamp').css('transform','translate3d('+x+'px,'+y+'px, 0px)');
+            });
+            $('.guests-chat-text').each(function(){
+                var a = $('.guestsbox').width() - $(this).width() - 120;   
+                var b = $(this).height() + 10;   
+                $(this).siblings('.guests-chat-timestamp').css('transform','translate3d('+a+'px,'+b+'px, 0px)');
             });
         </script>
 	</body>
