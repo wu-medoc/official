@@ -92,6 +92,14 @@
 			colorLight : "#ffffff",
 			correctLevel : QRCode.CorrectLevel.H
 		});
+		var qrcode = new QRCode(document.getElementById("qrcode1"), {
+			text: "https://mobii.ai/AppDownload",
+			width: 100,
+			height: 100,
+			colorDark : "#000000",
+			colorLight : "#ffffff",
+			correctLevel : QRCode.CorrectLevel.H
+		});
 
 		//app notify
 		$('.appclose').on('click',function(){

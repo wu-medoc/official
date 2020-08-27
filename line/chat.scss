@@ -45,7 +45,6 @@
     padding: 1em;
     display: inline-block;
 }
-
 .popup-messages {
     width: 100%;
     height: 100%;
@@ -53,7 +52,7 @@
     padding: 0 0.5em 3em 0.5em;
     /* direct */
     .direct-chat-text {
-        margin: 5px 80px 0 50px;
+        margin: 5px 5px 0 5px;
         padding: 5px 10px;
         position: relative;
         background: #E5E5EA none repeat scroll 0 0;
@@ -91,9 +90,9 @@
         color: #fff;
         opacity: 0.6;
         font-size: 10px;
-        position: absolute;
-        top: 0;
-        left: 0;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
     }
     .direct-chat-name {
         font-size: 12px;
@@ -119,13 +118,26 @@
     .direct-chat-msg {         
         margin-bottom: 10px;
         position: relative;
+        max-width: 70%;
     }     
+    .direct-imgbox{
+        margin: 5px 5px 0 5px;
+        img{
+        width: 100%;
+        height: auto;
+        border-radius: .5em;
+        }
+    }
     /* guests */
-    .guests-chat-msg{         
-        margin-right: 50px;
+    .guests-chat-msg{        
+        margin-bottom: 10px;
+        margin-right: 5px;
+        position: relative;
+        max-width: 70%;
+        float: right;
     }
     .guests-chat-text {       
-        margin: 5px 0 0 80px;
+        margin: 5px 0 0 5px;
         padding: 5px 10px;
         position: relative;  
         width: fit-content;
@@ -166,8 +178,6 @@
         color: #fff;
         opacity: 0.6;
         font-size: 10px;
-        position: absolute;
-        top: 0 ;
     }
     .guests-chat-name {
         text-align: right;

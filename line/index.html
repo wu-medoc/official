@@ -13,64 +13,6 @@
             <div class="chat-box">
                 <div class="popup-messages">          
                     <div class="chat-messages">
-                        <div id="div381"></div>
-                        <div class="guestsbox">
-                            <img alt="UserImage" src="https://picsum.photos/100/100/?random=2" class="guests-chat-img">
-                            <div class="guests-chat-info ">
-                                <span class="guests-chat-name">Lisa</span>
-                            </div>
-                            <div class="guests-chat-msg">
-                                <div class="guests-chat-text">
-                                    訂購須知<br>
-                                    收到商品後，請儘速檢查商品，若商品發生新品瑕疵之情形，您可申請商品退貨。<br>
-                                    商品到貨享七天猶豫期之權益（非試用期），辦理退貨商品必須是全新狀態且包裝完整，否則將會影響退貨權限。<br>
-                                    訂單僅提供退貨，恕不提供換貨。<br>
-                                    個人衛生用品除商品本身有瑕疵外，未拆封商品仍享有七天猶豫期之退貨權利。<br>
-                                    若為參加任選活動而套組出售之促銷商品，不可單品退貨，需將套組商品一併退回。
-                                </div> 
-                                <span class="guests-chat-timestamp">3.10 PM</span>
-                            </div>    
-                        </div>                                         
-                        <div class="directbox">
-                            <div class="direct-chat-info ">
-                                <span class="direct-chat-name">Osahan</span>
-                            </div>
-                            <img alt="UserImage" src="https://picsum.photos/100/100/?random=1" class="direct-chat-img">
-                            <div class="direct-chat-msg">
-                                <div class="direct-chat-text">
-                                    您好，我們會請專人到府收回退貨，再為您處理退款～
-                                </div>                 
-                                <span class="direct-chat-timestamp">3.30 PM</span>
-                            </div>        
-                        </div>                        
-                        <div class="directbox">
-                            <div class="direct-chat-info ">
-                                <span class="direct-chat-name">Osahan</span>
-                            </div>
-                            <img alt="UserImage" src="https://picsum.photos/100/100/?random=1" class="direct-chat-img">
-                            <div class="direct-chat-msg">            
-                                <div class="direct-chat-text">
-                                    運送須知
-                                    產品配送區域範圍僅限台灣本島，離島/海外目前無配送。
-                                    商品之實際配貨日期、退換貨日期，依我們向您另行通知之內容為準。
-                                    偏遠地區、樓層費及其它加價費用，皆由廠商於約定配送時一併告知。
-                                    若有特別需求、指定到貨日期及收貨時段，請務必於訂單留言處告知；本公司保留調整之權利。
-                                </div>       
-                                <span class="direct-chat-timestamp">3.36 PM</span>           
-                            </div>        
-                        </div>    
-                        <div class="guestsbox">
-                            <img alt="UserImage" src="https://picsum.photos/100/100/?random=2" class="guests-chat-img">
-                            <div class="guests-chat-info ">
-                                <span class="guests-chat-name">Lisa</span>
-                            </div>
-                            <div class="guests-chat-msg">
-                                <div class="guests-chat-text">
-                                    請幫我轉真人服務
-                                </div> 
-                                <span class="guests-chat-timestamp">3.40 PM</span>
-                            </div>     
-                        </div>     
                     </div>  
                 </div>   
             </div> 
@@ -91,31 +33,44 @@
                     $.getJSON("msg.json", function(data){ 
                         var html = [];
             
-                        /* loop through array */
-                        $.each(data, function(index, d){            
-                            html.push("userid : ", d.userid, ", ",
-                                    "datetime : ", d.datetime, ", ", 
-                                    "name : ", d.name, ", ", 
-                                    "msg : ", d.msg, "<br>");
+                        $.each(data, function(index, d){ 
+                            if(d.userid=='008'){
+                                html.push(
+                                    '<div class="guestsbox"><div class="guests-chat-info">',
+                                    '<img alt="UserImage" src="https://picsum.photos/100/100/?random=',d.userid.substr(2),'" class="guests-chat-img">',
+                                    '<div class="guests-chat-name">',d.name,'</div></div>',
+                                    '<div class="guests-chat-msg d-inline-flex"><div class="guests-chat-timestamp">',d.datetime.split(" ")[1],'</div>',
+                                );
+                                (d.msg.substr(1,3)=='img')?html.push('<div class="direct-imgbox">',d.msg,'</div></div></div>',):html.push('<div class="direct-chat-text">',d.msg,'</div></div></div>',);
+                            }else{
+                                html.push(
+                                    '<div class="directbox"><div class="direct-chat-info"><div class="direct-chat-name">',d.name,'</div>',
+                                    '<img alt="UserImage" src="https://picsum.photos/100/100/?random=',d.userid.substr(2),'" class="direct-chat-img"></div><div class="direct-chat-msg d-inline-flex">',
+                                );
+                                (d.msg.substr(1,3)=='img')?html.push('<div class="direct-imgbox">',d.msg,'</div>',):html.push('<div class="direct-chat-text">',d.msg,'</div>',);
+                                html.push(
+                                    '<div class="direct-chat-timestamp">',d.datetime.split(" ")[1],'</div></div></div>'
+                                );
+                            }        
                         });
             
             
-                        $("#div381").html(html.join('')).css("background-color", "orange");
-                    }).error(function(jqXHR, textStatus, errorThrown){ /* assign handler */
-                        /* alert(jqXHR.responseText) */
+                        $(".chat-messages").html(html.join(''));
+                        // $('.direct-chat-text').each(function(){
+                        //     var x = $(this).width() + 76;   
+                        //     var y = $(this).height() - 4;   
+                        //     $(this).siblings('.direct-chat-timestamp').css('transform','translate3d('+x+'px,'+y+'px, 0px)');
+                        // });
+                        // $('.guests-chat-text').each(function(){
+                        //     var a = $('.guestsbox').width() - $(this).width() - 110;   
+                        //     var b = $(this).height() + 10;   
+                        //     $(this).siblings('.guests-chat-timestamp').css('transform','translate3d('+a+'px,'+b+'px, 0px)');
+                        // });
+                    }).error(function(jqXHR, textStatus, errorThrown){
                         alert("error occurred!");
                     });
             });
-            $('.direct-chat-text').each(function(){
-                var x = $(this).width() + 76;   
-                var y = $(this).height() - 4;   
-                $(this).siblings('.direct-chat-timestamp').css('transform','translate3d('+x+'px,'+y+'px, 0px)');
-            });
-            $('.guests-chat-text').each(function(){
-                var a = $('.guestsbox').width() - $(this).width() - 120;   
-                var b = $(this).height() + 10;   
-                $(this).siblings('.guests-chat-timestamp').css('transform','translate3d('+a+'px,'+b+'px, 0px)');
-            });
+
         </script>
 	</body>
 </html>
