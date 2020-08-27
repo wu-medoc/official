@@ -84,24 +84,30 @@
 		});
 
 		//qrcode
-		var qrcode = new QRCode(document.getElementById("qrcode"), {
-			text: "https://mobii.ai/AppDownload",
-			width: 100,
-			height: 100,
-			colorDark : "#000000",
-			colorLight : "#ffffff",
-			correctLevel : QRCode.CorrectLevel.H
-		});
-		var qrcode = new QRCode(document.getElementById("qrcode1"), {
-			text: "https://mobii.ai/AppDownload",
-			width: 100,
-			height: 100,
-			colorDark : "#000000",
-			colorLight : "#ffffff",
-			correctLevel : QRCode.CorrectLevel.H
-		});
+		if($('#qrcode').length>0){
+			var qrcode = new QRCode(document.getElementById("qrcode"), {
+				text: "https://mobii.ai/AppDownload",
+				width: 100,
+				height: 100,
+				colorDark : "#000000",
+				colorLight : "#ffffff",
+				correctLevel : QRCode.CorrectLevel.H
+			});
+		};
+		if($('#qrcode1').length>0){
+			var qrcode = new QRCode(document.getElementById("qrcode1"), {
+				text: "https://mobii.ai/AppDownload",
+				width: 100,
+				height: 100,
+				colorDark : "#000000",
+				colorLight : "#ffffff",
+				correctLevel : QRCode.CorrectLevel.H
+			});
+		};
 
 		//app notify
+		if($('section.appNotifyBox').hasClass("d-none"))
+			$('.jastka').addClass("mb-2");
 		$('.appclose').on('click',function(){
 			$('section.appNotifyBox').addClass("d-none");
 			$('.jastka').addClass("mb-2");
