@@ -17,40 +17,44 @@
                 </div>   
             </div> 
         </div> 
+        <button class="btn qbtn d-none"><img src="img/question.svg"></button>
         <div class="notebox">
-            <h6>團購流程模擬</h6>
-            <ul>
-                <li>
-                    團主開團➜團員+1➜結標➜產生訂單清單
-                </li>
-                <li>
-                    團員可直接於訊息內輸入+1, 當結標後, 系統即可自動加總
-                </li>
-                <li>
-                    團員可回覆開團訊息並輸入+1, 當結標後, 系統即可自動加總
-                </li>
-                <li>
-                    當團主開新團時, 團員+1, 則該筆加總屬於新團
-                </li>
-                <li>
-                    團員可欲加總前一個開團商品, 可於該開團訊息回覆並輸入+1, 即可
-                </li>
-            </ul>
-            <img src="img/a.png">
-            <h6 class="mt-4">請願商品流程模擬</h6>
-            <ul>
-                <li>
-                    團員提供請願商品➜團主開團➜成團數達標➜結標➜產生訂單清單
-                </li>
-                <li>
-                    由團員提供請願商品, 團主決定是否開團
-                </li>
-                <li>
-                    請願商品開團流程與開團流程相似, 唯不同處是需成團數達標, 方能成團
-                </li>
-            </ul>
-            <h6 class="mt-4">付款方式</h6>
-            <img src="img/b.png">
+            <button class="btn close">×</button>
+            <div class="notebody">
+                <h6>團購流程模擬</h6>
+                <ul>
+                    <li>
+                        團主開團➜團員+1➜結標➜產生訂單清單
+                    </li>
+                    <li>
+                        團員可直接於訊息內輸入+1, 當結標後, 系統即可自動加總
+                    </li>
+                    <li>
+                        團員可回覆開團訊息並輸入+1, 當結標後, 系統即可自動加總
+                    </li>
+                    <li>
+                        當團主開新團時, 團員+1, 則該筆加總屬於新團
+                    </li>
+                    <li>
+                        團員可欲加總前一個開團商品, 可於該開團訊息回覆並輸入+1, 即可
+                    </li>
+                </ul>
+                <img src="img/a.png">
+                <h6 class="mt-4">請願商品流程模擬</h6>
+                <ul>
+                    <li>
+                        團員提供請願商品➜團主開團➜成團數達標➜結標➜產生訂單清單
+                    </li>
+                    <li>
+                        由團員提供請願商品, 團主決定是否開團
+                    </li>
+                    <li>
+                        請願商品開團流程與開團流程相似, 唯不同處是需成團數達標, 方能成團
+                    </li>
+                </ul>
+                <h6 class="mt-4">付款方式</h6>
+                <img src="img/b.png">
+            </div>
         </div>
 	<!-- Scripts -->
 		<script src="../assets/js/jquery.min.js"></script>
@@ -104,7 +108,10 @@
                         alert("error occurred!");
                     });
             });
-
+            $('.qbtn, .close').on('click',function(){
+                $('.notebox').toggleClass('d-none');
+                $('.qbtn').toggleClass('d-none');
+            });
         </script>
 	</body>
 </html>

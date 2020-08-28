@@ -275,4 +275,30 @@ hr.w-100{
         width: 240px;
         border-radius: 15px;
     }
+    .close{
+        position: absolute;
+        text-align: right;
+        right: .5em;
+        top: .5em;
+        font-size: x-large;
+        font-weight: bold;
+    }
+    @media (max-width: 480px) {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        .notebody{
+            overflow-y: scroll;
+            height: 100vh;
+        }
+    }
+}
+.qbtn{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 1em;
+    img{
+        width: 30px;
+    }
 }
