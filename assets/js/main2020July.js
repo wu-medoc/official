@@ -73,7 +73,7 @@
 
     // logos loop
         var fs="";
-        for (let i =1; i <= 26; i++){
+        for (let i =1; i <= 23; i++){
             (i<10) ? (fs='00'+i) : (fs='0'+i);
             $('#logos').append("<div class='logoBox scrollme animateme'><img src='logos/store"+fs+".png' alt='logo-store"+fs+"' class='slogoImg'></img></div>");            
 		}
