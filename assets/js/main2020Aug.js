@@ -125,4 +125,36 @@
 			console.log(thisHash);
 			$("html, body").animate({scrollTop: $(thisHash).offset().top},1500);
 		});
+
+		//Gift exchange
+		var date1=['9/7-9/20','9/14-10/27','9/21-10/4​','9/28-10/11​'];
+		var exHtml="";
+		var i, k;
+		$.getJSON( "../assets/js/json2020Aug.json", function( dataJson ) {
+			for (k=0;k<=3;k++) {
+				exHtml+='<p class="py-4">贈品兌換時間：'+date1[k]+'</p><div class="row">';			
+				$.each( dataJson, function( key, value ) {
+					console.log(value.item);
+					if(value.item==k){
+						for (i=1;i<=6;i++) {
+							if(value.sub==i){
+								exHtml+='<div class="col-6 col-md-4 col-xl-4" class="scrollme animateme"><img src="img0818/store'+k+i+'.png">';
+								exHtml+='<p>'+ value.tit +'</p>';
+								exHtml+='<p>'+ value.des +'</p>';
+								exHtml+='</div>';
+							};
+						};
+					};
+				});
+				exHtml+='</div><p>&emsp;</p>';
+			};
+			$('#gift').html(exHtml);
+		});
+
+		// logos loop
+		var fs="";
+		for (let i =1; i <= 23; i++){
+			(i<10) ? (fs='0'+i) : (fs=i);
+			$('#logos').append("<div class='item'><img src='img0818/MaskGroup"+fs+".png' class='img-fluid scrollme animateme'></div>");            
+		}
 })(jQuery);
