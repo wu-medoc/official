@@ -127,7 +127,7 @@
 		});
 
 		//Gift exchange
-		var date1=['9/7-9/20','9/14-10/27','9/21-10/4​','9/28-10/11​'];
+		var date1=['9/7-9/20','9/14-9/27','9/21-10/4​','9/28-10/11​'];
 		var exHtml="";
 		var i, k;
 		$.getJSON( "../assets/js/json2020Aug.json", function( dataJson ) {
