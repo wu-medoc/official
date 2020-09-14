@@ -153,7 +153,7 @@
 
 		// logos loop
 		var fs="";
-		for (let i =1; i <= 23; i++){
+		for (let i =1; i <= 26; i++){
 			(i<10) ? (fs='0'+i) : (fs=i);
 			$('#logos').append("<div class='item'><img src='img0818/MaskGroup"+fs+".png' class='img-fluid scrollme animateme'></div>");            
 		}
