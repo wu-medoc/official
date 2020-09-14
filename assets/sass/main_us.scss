@@ -174,6 +174,13 @@
 			}
 		}
 	}	
+	#funm{
+		img{
+			width: inherit;
+			max-width: 136px;
+			padding: .5em .5em 1em .5em;
+		}
+	}
 	#funpass{	
 		.fbox{
 			flex-direction: row;
@@ -248,12 +255,21 @@
 		100%	 {right:0px; top:0px;}
 	}
 	.a-item.imgbox{
-		width: 100%;
-		//overflow: hidden;
+		width: 200%;
+		overflow: hidden;
 		margin: 1em;
 		img {
 			width: 100%;
 			max-width: 500px;
+		}
+		&.app6{
+			width: 200%;
+			margin: 1em;
+			overflow: hidden;
+			img {
+				width: 100%;
+				max-width: 740px;
+			}
 		}
 	}
 	#mobiiDownload{
@@ -288,6 +304,11 @@
 				margin-left: 2em;
 			} 
 	}
+	.titlebox1{		
+		img.appf6 {
+			width: 250px;
+		} 
+	}
 
 
 	@include breakpoint('<=xxlarge') {
@@ -298,6 +319,7 @@
 				}
 				img.sImg1-2{
 					width: 276px * $numberXXL;
+					transform: translateY(-1em);
 				}								
 				a.usbtn{
 					&.b-top{
@@ -309,6 +331,13 @@
 				}		
 			}	
 		}		
+		#funm{
+			img{
+				width: inherit;
+				max-width: 136px * 1.4;
+				padding: .5em .5em 1em .5em;
+			}
+		}
 		#funpass{
 			img.sImg2-1{
 				width: 250px * $numberXXL ;
@@ -367,6 +396,13 @@
 				}		
 			}	
 		}			
+		#funm{
+			img{
+				width: inherit;
+				max-width: 136px * 1.2;
+				padding: .5em .5em 1em .5em;
+			}
+		}
 		#funpass{
 			img.sImg2-1{
 				width: 250px * $numberL ;
@@ -436,6 +472,13 @@
 					}
 				}	
 			}	
+		}
+		#funm{
+			img{
+				width: inherit;
+				max-width: 136px;
+				padding: .5em .5em 1em .5em;
+			}
 		}
 		#funpass{
 			.fbox{
