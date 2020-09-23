@@ -131,10 +131,10 @@
 		var exHtml="";
 		var i, k;
 		$.getJSON( "../assets/js/json2020Aug.json", function( dataJson ) {
-			for (k=0;k<=3;k++) {
-				exHtml+='<p class="py-4">贈品兌換時間：'+date1[k]+'</p><div class="row">';			
+			for (k=0;k<=0;k++) {
+				//exHtml+='<p class="py-4">贈品兌換時間：'+date1[k]+'</p><div class="row">';	
+				exHtml+='<div class="row mt-4">';		
 				$.each( dataJson, function( key, value ) {
-					console.log(value.item);
 					if(value.item==k){
 						for (i=1;i<=6;i++) {
 							if(value.sub==i){
@@ -153,7 +153,7 @@
 
 		// logos loop
 		var fs="";
-		for (let i =1; i <= 26; i++){
+		for (let i =1; i <= 30; i++){
 			(i<10) ? (fs='0'+i) : (fs=i);
 			$('#logos').append("<div class='item'><img src='img0818/MaskGroup"+fs+".png' class='img-fluid scrollme animateme'></div>");            
 		}

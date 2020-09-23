@@ -370,11 +370,11 @@ header{
   }
   @include breakpoint('<=xlarge') {	  
 	#intro{
-		@include padding(9em, 0);
+		@include padding(11.5em, 0);
 		@include vendor('background-image', 'url("../../event/img0818/cloud.png")');
 		background-attachment: local;
 		background-position: center center;
-		background-size: cover;
+		background-size: 100% 80%;
 		background-repeat: no-repeat;
 		text-align: center;
 		.cloud{
@@ -534,6 +534,12 @@ header{
 					max-width: 120px;
 				}
 			}
+			.btnMore{
+				width: 224px *1.3;
+			}
+			.limited{
+				width: 96px *1.3;
+			}
 		}			
 		&.st3{	
 			.logos{
@@ -616,8 +622,16 @@ header{
 		}
 
 		@include breakpoint('<=xsmall') {
-			&.st2 .row img {
-				max-width: 96px;
+			&.st2{
+				.row img {
+					max-width: 96px;
+				}
+				.btnMore{
+					width: 224px;
+				}
+				.limited{
+					width: 96px;
+				}
 			}
 			&.st3{	
 				.logos{
