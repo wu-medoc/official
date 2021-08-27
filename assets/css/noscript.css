@@ -1,2 +1,5 @@
-body:before,body:after{display:none}
+/* Loader */
+body:before, body:after {
+  display: none;
+}
 /*# sourceMappingURL=noscript.css.map */
