@@ -74,6 +74,7 @@
 	// close model
 		$('.btn-close').on('click', function() {
 			$('#myModal').hide();
+			$('#myFin').hide();
 			$('div.modal-backdrop').remove();
 			$('.modal-open').removeAttr('style');
 			$('body').removeClass('modal-open');
@@ -98,40 +99,50 @@ var openUrl = function(url) {
 	location.href = url;
 }
 // get cookie
-var checkCookie = function() {
+var checkCookie = function () {
 	let userCode = getCookie("userCode");
 	const userData = {
 		"UserInfo_Code": userCode
 	}
 	console.log(userCode);
 	if (userCode != "" && userCode != null) {
-		let env = ""
-		switch (location.hostname) {
-			case "sit.mobii.ai":
-				env = "https://sit-afpapi.mobii.ai/api/Event/EventUserLog"
-				break;
-			case "www-uat.mobii.ai":
-				env = "https://afpapi-uat.mobii.ai/api/Event/EventUserLog"
-				break;
-			case "www.mobii.ai":
-				env = " https://eventsapi.mobii.ai/Event/EventUserLog"
-				break;
-			default:
-				env = "https://sit-afpapi.mobii.ai/api/Event/EventUserLog"
-				break;
-		}
-		// console.log(env);
-		fetch(env, {
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(userData),
-			method: 'POST'
-		}).then(response => response.json())
+		let temp = async function() {
+			let env = ""
+			switch (location.hostname) {
+				case "sit.mobii.ai":
+					env = "https://sit-afpapi.mobii.ai/api/Event/EventUserLog"
+					break;
+				case "www-uat.mobii.ai":
+					env = "https://afpapi-uat.mobii.ai/api/Event/EventUserLog"
+					break;
+				case "www.mobii.ai":
+					env = " https://eventsapi.mobii.ai/Event/EventUserLog"
+					break;
+				case "mobii.ai":
+					env = " https://eventsapi.mobii.ai/Event/EventUserLog"
+					break;
+				default:
+					env = "https://sit-afpapi.mobii.ai/api/Event/EventUserLog"
+					break;
+			}
+			// console.log(env);
+			await fetch(env, {
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(userData),
+				method: 'POST'
+			}).then(response => response.json())
 			.then(data => {
-				// console.log(data);
-				location.href = 'https://www.sinotrade.com.tw/openact?strProd=0113&strWeb=0214&utm_campaign=OP_TSP_01&utm_source=Mobii&utm_medium=button_0816';
-			})
+				// 	// console.log(data);
+					var myFin = new bootstrap.Modal(document.getElementById('myFin'));
+					myFin.show();
+					setTimeout(function(){ 
+						location.href = 'https://www.sinotrade.com.tw/openact?strProd=0113&strWeb=0214&utm_campaign=OP_TSP_01&utm_source=Mobii&utm_medium=button_0816';
+					}, 500);
+			});
+		}
+		temp();
 	} else {
 		var myModal = new bootstrap.Modal(document.getElementById('myModal'));
 		myModal.show();
