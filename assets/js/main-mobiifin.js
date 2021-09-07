@@ -104,11 +104,10 @@ var checkCookie = function () {
 	// app get param
 	const urlParams = new URLSearchParams(location.search);
 	const userCodeApp = urlParams.get("userCode");
-	if(userCodeApp != "") {
+	userCode = getCookie("userCode");
+	if(userCode === "" || userCode === null) {
 		userCode = userCodeApp;
 		setCookie("userCode", userCode, 30);
-	}else {
-		userCode = getCookie("userCode");
 	}
 	const userData = {
 		"UserInfo_Code": userCode
