@@ -16,13 +16,6 @@
 			xxsmall:  [ null,     '320px'  ]
 		});
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
 	// Touch mode.
 		if (browser.mobile)
 			$body.addClass('is-touch');
@@ -89,52 +82,56 @@
 			}
 		});
 
-	// 	scroll button
-	//	$('.scrollme').attr('data-when','enter').attr('data-from','0.75').attr('data-to','0').attr('data-opacity','0').attr('data-translatey','100');
-		
-})(jQuery);
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+			checkCookie();
+		});
 
-// open url
-var openUrl = function(url) {
-	location.href = url;
-}
-// get cookie
-var checkCookie = function () {
-	let userCode = "";
-	// app get param
-	const urlParams = new URLSearchParams(location.search);
-	const userCodeApp = urlParams.get("userCode");
-	userCode = getCookie("userCode");
-	if(userCode === "" || userCode === null) {
-		userCode = userCodeApp;
-		setCookie("userCode", userCode, 30);
-	}
-	const userData = {
-		"UserInfo_Code": userCode
-	}
+	// check cookie
 
-	console.log(userCode);
-	if (userCode != "" && userCode != null) {
+	function checkCookie () {
+		let userCode = "";
 		let env = ""
 		switch (location.hostname) {
 			case "127.0.0.1":
-				env = "http://54.150.124.230:38089/Event/EventUserLog"
+				env = "http://54.150.124.230:38089/Event/EventUserLog";
+				userCode = getCookie('sit.userCode');
 				break;
 			case "sit.mobii.ai":
-				env = "http://54.150.124.230:38089/Event/EventUserLog"
+				env = "http://54.150.124.230:38089/Event/EventUserLog";
+				userCode = getCookie('sit.userCode');
+				break;
+			case "www-uat.mobii.ai":
+				env = "https://afpsystem-uat.mobii.ai/Event/EventUserLog";
+				userCode = getCookie('uat.userCode');
 				break;
 			case "www.mobii.ai":
-				env = "https://eventsapi.mobii.ai/Event/EventUserLog"
+				env = "https://eventsapi.mobii.ai/Event/EventUserLog";
+				userCode = getCookie('M_userCode');
 				break;
 			case "mobii.ai":
-				env = "https://eventsapi.mobii.ai/Event/EventUserLog"
+				env = "https://eventsapi.mobii.ai/Event/EventUserLog";
+				userCode = getCookie('M_userCode');
 				break;
 			default:
-				env = ""
+				env = "https://eventsapi.mobii.ai/Event/EventUserLog";
+				userCode = getCookie('M_userCode');
 				break;
 		}
-		// console.log(env);
-		if(env != "") {
+
+		// app get param for url
+		const urlParams = new URLSearchParams(location.search);
+		const userCodeApp = urlParams.get("userCode");
+		userCode = ((userCodeApp == null) ? userCode : userCodeApp);
+		const userData = {
+			"UserInfo_Code": userCode
+		}
+
+		// redirect to fin and log
+		if(userCode != "" && userCode != null) {
 			let temp = async function() {
 				await fetch(env, {
 					headers: {
@@ -154,34 +151,34 @@ var checkCookie = function () {
 			}
 			temp();
 		} else {
-			console.log(location.hostname + "無法Log");
-			location.href = 'https://www.sinotrade.com.tw/openact?strProd=0113&strWeb=0214&utm_campaign=OP_TSP_01&utm_source=Mobii&utm_medium=button_0816';
-		}
-	} else {
-		var myModal = new bootstrap.Modal(document.getElementById('myModal'));
-		myModal.show();
-	}
-}
-
-var getCookie = function(userCode) {
-	let name = userCode + "=";
-	let decodedCookie = decodeURIComponent(document.cookie);
-	let ca = decodedCookie.split(';');
-	for(let i = 0; i <ca.length; i++) {
-		let c = ca[i];
-		while (c.charAt(0) == ' ') {
-			c = c.substring(1);
-		}
-		if (c.indexOf(name) == 0) {
-			return c.substring(name.length, c.length);
+			var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+			myModal.show();
+			// location.href = 'https://www.sinotrade.com.tw/openact?strProd=0113&strWeb=0214&utm_campaign=OP_TSP_01&utm_source=Mobii&utm_medium=button_0816';
 		}
 	}
-	return "";
-}
 
-var setCookie = function(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
+	// get cookie
+	function getCookie(userCode) {
+		let name = userCode + "=";
+		let decodedCookie = decodeURIComponent(document.cookie);
+		let ca = decodedCookie.split(';');
+		for(let i = 0; i <ca.length; i++) {
+			let c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+
+	// set cookie
+	function setCookie(cname, cvalue, exdays) {
+		const d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		let expires = "expires="+ d.toUTCString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+})(jQuery);
