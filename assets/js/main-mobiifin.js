@@ -87,25 +87,27 @@
 			setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
-			checkCookie();
 		});
 
-	// check cookie
+})(jQuery);
 
-	function checkCookie () {
+
+	// check cookie
+	// API文件 https://bookstack.eyesmedia.com.tw/books/c4100/page/51d92
+	var checkCookie = function() {
 		let userCode = "";
 		let env = ""
 		switch (location.hostname) {
 			case "127.0.0.1":
-				env = "http://54.150.124.230:38089/Event/EventUserLog";
+				env = "https://sit-eventsapi.mobii.ai/Event/EventUserLog";
 				userCode = getCookie('sit.userCode');
 				break;
 			case "sit.mobii.ai":
-				env = "http://54.150.124.230:38089/Event/EventUserLog";
+				env = "https://sit-eventsapi.mobii.ai/Event/EventUserLog";
 				userCode = getCookie('sit.userCode');
 				break;
 			case "www-uat.mobii.ai":
-				env = "https://afpsystem-uat.mobii.ai/Event/EventUserLog";
+				env = "https://uat-eventsapi.mobii.ai/Event/EventUserLog";
 				userCode = getCookie('uat.userCode');
 				break;
 			case "www.mobii.ai":
@@ -157,8 +159,13 @@
 		}
 	}
 
+	// open url
+	var openUrl = function(url) {
+		location.href = url;
+	}
+
 	// get cookie
-	function getCookie(userCode) {
+	var getCookie = function(userCode) {
 		let name = userCode + "=";
 		let decodedCookie = decodeURIComponent(document.cookie);
 		let ca = decodedCookie.split(';');
@@ -175,10 +182,9 @@
 	}
 
 	// set cookie
-	function setCookie(cname, cvalue, exdays) {
+	var setCookie = (cname, cvalue, exdays) => {
 		const d = new Date();
 		d.setTime(d.getTime() + (exdays*24*60*60*1000));
 		let expires = "expires="+ d.toUTCString();
 		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 	}
-})(jQuery);
