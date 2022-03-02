@@ -771,46 +771,6 @@ header {
   font-size: medium;
 }
 
-.head-box .head-msg .head-txt {
-  padding: 0.5em;
-  position: relative;
-  width: 80%;
-  text-align: left;
-  line-height: initial;
-}
-
-.head-box .head-msg .head-txt small:first-child {
-  position: relative;
-  width: 100%;
-  display: block;
-}
-
-.head-box .head-msg .head-txt small:first-child::after {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  width: calc(100% - 83px);
-  height: 1px;
-  top: 0.85em;
-  background: white;
-}
-
-.head-box .head-msg .head-txt small:last-child {
-  position: relative;
-  padding-left: calc(100% - 136px);
-}
-
-.head-box .head-msg .head-txt small:last-child::before {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  width: calc(100% - 136px);
-  height: 1px;
-  left: 0;
-  top: 0.85em;
-  background: white;
-}
-
 /* Main */
 .main {
   display: -moz-flex;
@@ -875,11 +835,26 @@ header {
   display: inline-flex;
 }
 
-.main.bg-one .row-reverse, .main.bg-two .row-reverse, .main.bg-three .row-reverse {
+.main.bg-four {
+  background-color: #EDF7FF;
+  font-weight: 700;
+}
+
+.main.bg-four .container {
+  padding: 2em 2em 0 2em;
+}
+
+.main.bg-four img.four-txt {
+  width: 82px;
+  height: auto;
+  display: inline-flex;
+}
+
+.main.bg-one .row-reverse, .main.bg-two .row-reverse, .main.bg-three .row-reverse, .main.bg-four .row-reverse {
   flex-direction: row-reverse;
 }
 
-.main.bg-one .row .col-md-6.txt, .main.bg-two .row .col-md-6.txt, .main.bg-three .row .col-md-6.txt {
+.main.bg-one .row .col-md-6.txt, .main.bg-two .row .col-md-6.txt, .main.bg-three .row .col-md-6.txt, .main.bg-four .row .col-md-6.txt {
   align-self: center;
 }
 
@@ -899,6 +874,10 @@ header {
 
 .main .txt-red {
   color: #DB4131;
+}
+
+.main .txt-blue {
+  color: #2C68FF;
 }
 
 .main .txt-big {
@@ -947,8 +926,12 @@ header {
   font-weight: 700;
 }
 
+.main .note strong {
+  font-weight: 700;
+}
+
 .main .note ul {
-  list-style: disc;
+  list-style: none;
 }
 
 .main .note ul li, .main .note ol li {
@@ -1013,39 +996,5 @@ header {
 
 .modal-footer button {
   color: #007AFF;
-}
-
-@media screen and (max-width: 736px) {
-  .head-box .head-msg .head-txt {
-    font-size: xx-small;
-  }
-  .head-box .head-msg .head-txt small:first-child {
-    position: relative;
-    width: 100%;
-    display: block;
-  }
-  .head-box .head-msg .head-txt small:first-child::after {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    width: calc(100% - 66px);
-    height: 1px;
-    top: 0.85em;
-    background: white;
-  }
-  .head-box .head-msg .head-txt small:last-child {
-    position: relative;
-    padding-left: calc(100% - 102px);
-  }
-  .head-box .head-msg .head-txt small:last-child::before {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    width: calc(100% - 102px);
-    height: 1px;
-    left: 0;
-    top: 0.85em;
-    background: white;
-  }
 }
 /*# sourceMappingURL=main_mobiifin.css.map */
