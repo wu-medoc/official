@@ -295,9 +295,15 @@ header {
 }
 
 @include breakpoint('<=large') {
+	.head-box .head-msg {
+		margin-left: 8%;
+	}
 }
 
 @include breakpoint('<=medium') {
+	.head-box .head-msg {
+		margin-left: 5%;
+	}
 }
 
 @include breakpoint('<=small') {
@@ -335,6 +341,9 @@ header {
 }
 
 @include breakpoint('<=xsmall') {
+	.head-box .head-msg {
+		margin-left: 0%;
+	}
 }
 
 @include breakpoint('<=xxsmall') {
