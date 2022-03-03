@@ -76,9 +76,9 @@
 	// login open url
 		$('#login').on('click', function() {
 			if (location.hostname.indexOf('localhost') > -1) {
-				location.href = 'https://sit.mobii.ai';
+				window.open('https://sit.mobii.ai', '_blank');
 			} else {
-				location.href = 'https://'+location.hostname;
+				window.open('https://'+location.hostname, '_blank');
 			}
 		});
 
@@ -147,7 +147,7 @@
 					var myFin = new bootstrap.Modal(document.getElementById('myFin'));
 					myFin.show();
 					setTimeout(function(){ 
-						location.href = 'https://www.sinotrade.com.tw/openact?strProd=0113&strWeb=0214&utm_campaign=OP_TSP_01&utm_source=Mobii&utm_medium=button_0816';
+						window.open('https://www.sinotrade.com.tw/openact?strProd=0113&strWeb=0214&utm_campaign=OP_TSP_01&utm_source=Mobii&utm_medium=button_0816', '_blank');
 					}, 500);
 				});
 			}
@@ -155,13 +155,12 @@
 		} else {
 			var myModal = new bootstrap.Modal(document.getElementById('myModal'));
 			myModal.show();
-			// location.href = 'https://www.sinotrade.com.tw/openact?strProd=0113&strWeb=0214&utm_campaign=OP_TSP_01&utm_source=Mobii&utm_medium=button_0816';
 		}
 	}
 
 	// open url
 	var openUrl = function(url) {
-		location.href = url;
+		window.open(url, '_blank');
 	}
 
 	// get cookie

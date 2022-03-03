@@ -16,6 +16,7 @@ section, summary, time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "LiHei Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 article, aside, details, figcaption, figure,
@@ -880,8 +881,16 @@ header {
   color: #2C68FF;
 }
 
+.main .txt-gray {
+  color: #848484;
+}
+
 .main .txt-big {
   font-size: xx-large;
+}
+
+.main .txt-large {
+  font-size: 3em;
 }
 
 .main .txt-smaller {
