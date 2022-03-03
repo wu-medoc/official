@@ -147,7 +147,7 @@
 					var myFin = new bootstrap.Modal(document.getElementById('myFin'));
 					myFin.show();
 					setTimeout(function(){ 
-						window.open('https://www.sinotrade.com.tw/openact?strProd=0113&strWeb=0214&utm_campaign=OP_TSP_01&utm_source=Mobii&utm_medium=button_0816', '_blank');
+						window.open('https://dmp.sinotrade.com.tw/t/DK', '_blank');
 					}, 500);
 				});
 			}

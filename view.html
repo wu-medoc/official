@@ -7,48 +7,124 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css"/>
 		<style>
-			.imgbox{
+			.imgbox {
 				height: 200px;
-    			background-size: cover;
+    		background-size: cover;
 				border: 1px solid #888;
-				border-radius: 15px;
+				border-radius: 10px;
 			}
-			a{
+
+			.imgbox::after {
+				content: "";
+				width: calc(100% - 2em);
+				height: 6em;
+				background: linear-gradient(to top, black, transparent);;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				opacity: .55;
+			}
+
+			h4 {
 				color: #555;
+				position: absolute;
+				left: 50%;
+				bottom: 20%;
+				transform: translate(-50%, 0);
+				filter: drop-shadow(1px 1px 4px gray);
+				color: white;
 			}
 		</style>
 	</head>
 	<body class="is-preload">
 		<div class="d-flex flex-column align-items-center">
-			<h1 class="w-100 text-center p-5">one page view</h1>
+			<h1 class="w-100 text-center p-5">Angular DISPLAY</h1>
 			<div class="row container">
-				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="document.location='event/mobiifin.html'">
-					<div class="imgbox" style="background-image: url('images/page/fin.png');"></div>
-					<h3>mobii fin</h3>
+				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="window.open('https://mobii.ai','_blank')">
+					<div class="imgbox" style="background-image: url('page/mobii-index.png');"></div>
+					<h4>Mobii AFP專案</h4>
 				</div>
-				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="document.location='about.html'">
-					<div class="imgbox" style="background-image: url('images/page/about.png');"></div>
-					<h3>mobii about</h3>
+				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="window.open('https://mobii.ai','_blank')">
+					<div class="imgbox" style="background-image: url('page/map.png');"></div>
+					<h4>Mobii結合Google地圖</h4>
 				</div>
-				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="document.location='Seller/main.html'">
-					<div class="imgbox" style="background-image: url('images/page/seller.png');"></div>
-					<h3>Mobii! 開店寶</h3>
+				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="window.open('https://wu-medoc.github.io/demo/sort','_blank')">
+					<div class="imgbox" style="background-image: url('page/sortablejs.png');"></div>
+					<h4>sortableJS拖曳排序</h4>
 				</div>
-				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="document.location='event/funmpoint.html'">
-					<div class="imgbox" style="background-image: url('images/page/fun.png');"></div>
-					<h3>Mobii! 集遊節</h3>
+			</div>
+		</div>
+		<div class="d-flex flex-column align-items-center">
+			<h1 class="w-100 text-center p-5">VUE DISPLAY</h1>
+			<div class="row container">
+				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="window.open('https://events.mobii.ai/Seller/RealEstate/43794487','_blank')">
+					<div class="imgbox" style="background-image: url('page/realEstate.png');"></div>
+					<h4>Mobii 預約賞屋</h4>
 				</div>
-				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="document.location='hinet.html'">
-					<div class="imgbox" style="background-image: url('images/page/hinet.png');"></div>
-					<h3>mobii X Hinet5G</h3>
+				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="window.open('https://wu-medoc.github.io/vue3/','_blank')">
+					<div class="imgbox" style="background-image: url('page/vue3.png');"></div>
+					<h4>VUE 單元練習</h4>
 				</div>
-				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="document.location='line'">
-					<div class="imgbox" style="background-image: url('images/page/linechat.png');"></div>
-					<h3>Line團購流程模擬</h3>
+			</div>
+		</div>
+		<div class="d-flex flex-column align-items-center">
+			<h1 class="w-100 text-center p-5">RWD DISPLAY</h1>
+			<div class="row container">
+				<div class="col-sm-6 col-md-4 text-center pb-5 scrollme animateme" onclick="document.location='event/mobiifin.html'">
+					<div class="imgbox" style="background-image: url('page/fin.png');"></div>
+					<h4>Mobii x 永豐</h4>
 				</div>
-				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="document.location='mei.html'">
-					<div class="imgbox" style="background-image: url('images/page/mei.png');"></div>
-					<h3>Svg手寫字</h3>
+				<div class="col-sm-6 col-md-4 text-center pb-5 scrollme animateme" onclick="document.location='about.html'">
+					<div class="imgbox" style="background-image: url('page/about.png');"></div>
+					<h4>Mobii 關於我</h4>
+				</div>
+				<div class="col-sm-6 col-md-4 text-center pb-5 scrollme animateme" onclick="document.location='Seller/main.html'">
+					<div class="imgbox" style="background-image: url('page/seller.png');"></div>
+					<h4>Mobii 開店寶</h4>
+				</div>
+				<div class="col-sm-6 col-md-4 text-center pb-5 scrollme animateme" onclick="document.location='event/funmpoint.html'">
+					<div class="imgbox" style="background-image: url('page/fun.png');"></div>
+					<h4>Mobii 集遊節</h4>
+				</div>
+				<div class="col-sm-6 col-md-4 text-center pb-5 scrollme animateme" onclick="document.location='hinet.html'">
+					<div class="imgbox" style="background-image: url('page/hinet.png');"></div>
+					<h4>Mobii x Hinet5G</h4>
+				</div>
+				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="window.open('https://wu-medoc.github.io/eyesmedia_afp/game-center/game/luckspin/luckspin.html', '_blank')">
+					<div class="imgbox" style="background-image: url('page/luckgame.png');"></div>
+					<h4>Mobii 大轉盤遊戲</h4>
+				</div>
+				<div class="col-sm-6 col-md-4 text-center pb-5" onclick="window.open('https://wu-medoc.github.io/eyesmedia_afp/game-center/game/scratch/scratch.html', '_blank')">
+					<div class="imgbox" style="background-image: url('page/scratch.png');"></div>
+					<h4>Mobii 刮刮樂遊戲</h4>
+				</div>
+				<div class="col-sm-6 col-md-4 text-center pb-5 scrollme animateme" onclick="document.location='line'">
+					<div class="imgbox" style="background-image: url('page/linechat.png');"></div>
+					<h4>Line團購流程模擬</h4>
+				</div>
+				<div class="col-sm-6 col-md-4 text-center pb-5 scrollme animateme" onclick="document.location='mei.html'">
+					<div class="imgbox" style="background-image: url('page/mei.png');"></div>
+					<h4>Svg手寫字</h4>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex flex-column align-items-center">
+			<h1 class="w-100 text-center p-5">MEDIA DISPLAY</h1>
+			<div class="row container">
+				<div class="col-sm-6 col-md-4 text-center pb-5 scrollme animateme" onclick="window.open('https://www.youtube.com/watch?v=L-ahZWUG4KA','_blank')">
+					<div class="imgbox">
+						<iframe width="100%" height="200" src="https://www.youtube.com/embed/L-ahZWUG4KA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<h4>天明形象影片</h4>
+				</div>
+				<div class="col-sm-6 col-md-4 text-center pb-5 scrollme animateme" onclick="window.open('https://www.youtube.com/watch?v=Ebe8tIfQPKw','_blank')">
+					<div class="imgbox">
+						<iframe width="100%" height="200" src="https://www.youtube.com/embed/Ebe8tIfQPKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<h4>Line chatbot比賽 x 來團Go</h4>
 				</div>
 			</div>
 		</div>
@@ -60,5 +136,10 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/jquery2.1.1.min.js"></script>
 		<script src="assets/js/scrollme/jquery.scrollme.min.js"></script>
+		<script>
+			(function($) {
+				$('.scrollme').attr('data-when','enter').attr('data-from','1').attr('data-to','0').attr('data-opacity','0.5').attr('data-translatey','100');
+			})(jQuery);
+		</script>
 	</body>
 </html>
